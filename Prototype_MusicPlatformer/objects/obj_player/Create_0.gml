@@ -4,13 +4,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 #macro MAX_ATTACK_DELAY 15
+#macro MAX_INPUT_TIMER 15
 #macro MAX_PICKUP_DISTANCE 16
-
-enum ATTACK_STATES
-{
-	NOTE,
-	PHRASE
-};
 
 Phrase = 
 {
@@ -20,7 +15,13 @@ Phrase =
 	sprite: spr_quarternote,
 	combination: [NOTE_DIRECTION.DOWN,
 				  NOTE_DIRECTION.DOWNRIGHT,
-				  NOTE_DIRECTION.RIGHT]
+				  NOTE_DIRECTION.RIGHT]	
+}
+
+enum ATTACK_STATES
+{
+	NOTE,
+	PHRASE
 };
 
 #region Controls
@@ -66,7 +67,10 @@ moveVector_x = 0;
 moveVector_y = 0;
 
 noteDelay = MAX_ATTACK_DELAY;
+inputTimer = MAX_INPUT_TIMER;
 availablePhrases = [Phrase];	// Array of struct "Phrase"
+currPhrase = noone;				// Selected phrase based on inputs
+prevDir = noone;
 inputQueue = [];				// Array of enum "Note_Direction"
 
 canAttack = true;

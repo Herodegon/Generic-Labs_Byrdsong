@@ -66,22 +66,42 @@ if (noteDir != NOTE_DIRECTION.NONE && canAttack)
 	#region Phrase System
 	else if (phraseMode)
 	{
-		if (array_length(inputQueue) == 3) {array_delete(inputQueue,0,array_length(inputQueue));}
-		if (noteDir != array_last(inputQueue)) 
+		if (!currPhrase)
 		{
-			show_debug_message("Dir: {0}", noteDir);
-			array_push(inputQueue,noteDir);
+			if (array_length(inputQueue) == 5) {inputQueue = [];}
+			if (noteDir != array_last(inputQueue)) 
+			{
+				//show_debug_message("Dir: {0}", noteDir);
+				array_push(inputQueue,noteDir);
+				alarm[1] = inputTimer;
+			}
+			currPhrase = getPhrase(availablePhrases,inputQueue);
+			if (currPhrase)
+			{
+				canAttack = false;	// Player must stop inputting attacks before they choose a direction
+			}
 		}
-		var phrase = getPhrase(availablePhrases,inputQueue);
-		if (phrase != noone)
+		else
 		{
-			noteObj = phrase.object;
+			// Verify the direction input
+			if (prevDir == noteDir)
+			{
+				//show_debug_message("Select currPhrase / Dir: {0}", noteDir);
+				noteObj = currPhrase.object;
+				inputQueue = [];
+				currPhrase = noone;
+				prevDir = noone;
+			}
+			else
+			{
+				prevDir = noteDir;
+			}
 		}
 	}
 	
 	#endregion
 	
-	#region Attack
+	#region Spawn Attack
 	if (noteObj != noone)
 	{
 		fireNote(noteObj,noteDir);
@@ -90,6 +110,10 @@ if (noteDir != NOTE_DIRECTION.NONE && canAttack)
 	}
 	
 	#endregion
+}
+else if (currPhrase && noteDir == NOTE_DIRECTION.NONE)		// Wait for player to stop inputting directions
+{
+	canAttack = true;
 }
 
 #endregion

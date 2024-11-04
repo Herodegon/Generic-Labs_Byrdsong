@@ -1,6 +1,11 @@
 /// @description Initialize basic note
 // You can write your code in this editor
 
+#region Sprite variables
+image_speed = 0;
+
+#endregion
+
 #region Note variables
 damage = 1;
 
