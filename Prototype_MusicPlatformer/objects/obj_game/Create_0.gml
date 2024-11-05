@@ -9,8 +9,6 @@ global.windowScale = 8
 initWindow();
 initCamera();
 
-script_phrases();
-script_noteSystem();
 spawnPlayer();
 
 show_debug_message("Width/Height: {0}x{1}",window_get_width(),window_get_height());

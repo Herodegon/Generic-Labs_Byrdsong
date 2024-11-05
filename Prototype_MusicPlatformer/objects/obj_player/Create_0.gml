@@ -7,16 +7,9 @@
 #macro MAX_INPUT_TIMER 15
 #macro MAX_PICKUP_DISTANCE 16
 
-Phrase = 
-{
-	name: "Quarter Note",
-	noteType: NOTE_TYPE.SINGLENOTE,
-	object: obj_quarternote,
-	sprite: spr_quarternote,
-	combination: [NOTE_DIRECTION.DOWN,
-				  NOTE_DIRECTION.DOWNRIGHT,
-				  NOTE_DIRECTION.RIGHT]	
-}
+// Initialize combat system
+script_phrases();
+script_noteSystem();
 
 enum ATTACK_STATES
 {
@@ -56,7 +49,7 @@ image_speed = 0;
 #endregion
 
 #region Camera Initialization
-initCamera();
+//initCamera();
 
 #endregion
 
@@ -68,7 +61,7 @@ moveVector_y = 0;
 
 noteDelay = MAX_ATTACK_DELAY;
 inputTimer = MAX_INPUT_TIMER;
-availablePhrases = [Phrase];	// Array of struct "Phrase"
+availablePhrases = [Phrases_Level1.quarternote];	// Array of struct "Phrase"
 currPhrase = noone;				// Selected phrase based on inputs
 prevDir = noone;
 inputQueue = [];				// Array of enum "Note_Direction"
