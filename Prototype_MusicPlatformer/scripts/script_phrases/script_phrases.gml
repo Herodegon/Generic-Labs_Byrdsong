@@ -21,9 +21,21 @@ Phrase_Example =
 
 #endregion
 
+#region Basic Note
+basicNote = 
+{
+	name: "Note",							
+	noteType: NOTE_TYPE.SINGLENOTE,			
+	object: obj_note,						
+	sprite: spr_eighthnote,					
+	combination: noone						// Does not have combo input		
+}
+
+#endregion
+
 #region Phrases - Level 1
-Phrases_Level1 = {
-	quarternote: 
+Phrases_Level1 = [
+	//QuarterNote: 
 	{
 			name: "Quarter Note",
 			noteType: NOTE_TYPE.SINGLENOTE,
@@ -34,7 +46,7 @@ Phrases_Level1 = {
 						  NOTE_DIRECTION.RIGHT]
 	},
 	
-	bass:
+	//Bass:
 	{
 		name: "Bass",
 		noteType: NOTE_TYPE.WAVENOTE,
@@ -45,7 +57,7 @@ Phrases_Level1 = {
 					  NOTE_DIRECTION.DOWN]
 	},
 	
-	opera:
+	//Opera:
 	{
 		name: "Opera",
 		noteType: NOTE_TYPE.ECHONOTE,
@@ -56,6 +68,6 @@ Phrases_Level1 = {
 					  NOTE_DIRECTION.LEFT,
 					  NOTE_DIRECTION.RIGHT]
 	}
-}
+];
 
 #endregion

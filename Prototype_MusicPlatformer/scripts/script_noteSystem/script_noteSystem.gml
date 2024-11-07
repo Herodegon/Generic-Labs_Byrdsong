@@ -114,12 +114,12 @@ function getPhrase(phrases,queue)
 	return phrase;
 }
 
-function fireNote(noteObj,noteDirection)
+function fireNote(struct,dir)
 {
 	var noteVector_x = 0;
 	var noteVector_y = 0;
 	
-	switch(noteDirection)
+	switch(dir)
 	{
 		case NOTE_DIRECTION.RIGHT:
 			noteVector_x = 1;
@@ -157,10 +157,15 @@ function fireNote(noteObj,noteDirection)
 			break;
 	}
 	var playerSprite = obj_player.sprite_index;
-	var obj_x = obj_player.x + sprite_get_width(playerSprite)*noteVector_x;
-	var obj_y = obj_player.y + sprite_get_height(playerSprite)*noteVector_y;
+	var obj_x = obj_player.x + (sprite_get_width(playerSprite)/2)*noteVector_x;
+	var obj_y = obj_player.y + (sprite_get_height(playerSprite)/2)*noteVector_y;
 	
-	noteObj = instance_create_layer(obj_x,obj_y,"Instances",noteObj);
+	var noteObj = instance_create_layer(obj_x,obj_y,"Instances",struct.object);
 	noteObj.moveVector_x = noteVector_x;
 	noteObj.moveVector_y = noteVector_y;
+	if (struct.noteType == NOTE_TYPE.WAVENOTE)
+	{
+		noteObj.image_angle = -45*dir;
+		//noteObj.image_angle = point_direction(0,0,noteVector_x,noteVector_y);
+	}
 };

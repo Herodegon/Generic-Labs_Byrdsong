@@ -54,11 +54,11 @@ if (keyboard_check_pressed(Controls.toggle_phraseMode))
 var noteDir = getNoteDirection(Controls);
 if (noteDir != NOTE_DIRECTION.NONE && canAttack)
 {
-	var noteObj = noone;
+	var noteStruct = noone;
 	#region Basic Notes
 	if (!phraseMode)
 	{
-		noteObj = obj_note;
+		noteStruct = basicNote;
 	}
 	
 	#endregion
@@ -87,7 +87,7 @@ if (noteDir != NOTE_DIRECTION.NONE && canAttack)
 			if (prevDir == noteDir)
 			{
 				//show_debug_message("Select currPhrase / Dir: {0}", noteDir);
-				noteObj = currPhrase.object;
+				noteStruct = currPhrase;
 				inputQueue = [];
 				currPhrase = noone;
 				prevDir = noone;
@@ -102,9 +102,9 @@ if (noteDir != NOTE_DIRECTION.NONE && canAttack)
 	#endregion
 	
 	#region Spawn Attack
-	if (noteObj != noone)
+	if (noteStruct != noone)
 	{
-		fireNote(noteObj,noteDir);
+		fireNote(noteStruct,noteDir);
 		canAttack = false;
 		alarm[0] = noteDelay;
 	}
