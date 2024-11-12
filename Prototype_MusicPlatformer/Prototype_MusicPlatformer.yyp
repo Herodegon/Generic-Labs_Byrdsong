@@ -45,6 +45,7 @@
     {"id":{"name":"obj_wave","path":"objects/obj_wave/obj_wave.yy",},},
     {"id":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
     {"id":{"name":"script_camera","path":"scripts/script_camera/script_camera.yy",},},
+    {"id":{"name":"script_GUI","path":"scripts/script_GUI/script_GUI.yy",},},
     {"id":{"name":"script_helper","path":"scripts/script_helper/script_helper.yy",},},
     {"id":{"name":"script_noteSystem","path":"scripts/script_noteSystem/script_noteSystem.yy",},},
     {"id":{"name":"script_phrases","path":"scripts/script_phrases/script_phrases.yy",},},

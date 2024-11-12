@@ -8,15 +8,16 @@
  */
 
 #region Phrase Template
-Phrase_Example = 
+phrase_Example = 
 {
 	name: "Quarter Note",					// Name of Special Move 
 	noteType: NOTE_TYPE.SINGLENOTE,			// Type of Move
+	upgrade: noone,							// Pointer to the upgraded version of this phrase
 	object: obj_quarternote,				// Move Object
 	sprite: spr_quarternote,				// Move Sprite
 	combination: [NOTE_DIRECTION.DOWN,		// Inputs to Trigger Move
 				  NOTE_DIRECTION.DOWNRIGHT,
-				  NOTE_DIRECTION.RIGHT]	
+				  NOTE_DIRECTION.RIGHT]
 }
 
 #endregion
@@ -25,20 +26,22 @@ Phrase_Example =
 basicNote = 
 {
 	name: "Note",							
-	noteType: NOTE_TYPE.SINGLENOTE,			
+	noteType: NOTE_TYPE.SINGLENOTE,	
+	upgrade: noone,
 	object: obj_note,						
 	sprite: spr_eighthnote,					
-	combination: noone						// Does not have combo input		
+	combination: noone,						// Does not have combo input		
 }
 
 #endregion
 
 #region Phrases - Level 1
-Phrases_Level1 = [
+phrasesPool = [
 	//QuarterNote: 
 	{
 			name: "Quarter Note",
 			noteType: NOTE_TYPE.SINGLENOTE,
+			upgrade: noone,
 			object: obj_quarternote,
 			sprite: spr_quarternote,
 			combination: [NOTE_DIRECTION.DOWN,
@@ -50,6 +53,7 @@ Phrases_Level1 = [
 	{
 		name: "Bass",
 		noteType: NOTE_TYPE.WAVENOTE,
+		upgrade: noone,
 		object: obj_wave,
 		sprite: spr_wave,
 		combination: [NOTE_DIRECTION.LEFT,
@@ -61,6 +65,7 @@ Phrases_Level1 = [
 	{
 		name: "Opera",
 		noteType: NOTE_TYPE.ECHONOTE,
+		upgrade: noone,
 		object: obj_wave,
 		sprite: spr_wave,
 		combination: [NOTE_DIRECTION.UP,
