@@ -1,11 +1,6 @@
 /// @description Movement, attacks, and collision
 // You can write your code in this editor
 
-#region Check enemy collision
-// TODO: Create enemy collision
-
-#endregion
-
 #region Movement
 
 if (canMove)
@@ -42,6 +37,25 @@ if (canMove)
 
 #endregion
 
+#region Check enemy collision
+with (obj_enemy)
+{
+	if (instance_place(x,y,other))
+	{
+		other.hp -= damage;
+	}
+}
+
+#endregion
+
+#region Health Check
+if (hp <= 0)
+{
+	instance_destroy();	
+}
+
+#endregion
+
 #region Attack System
 #region Check for state change
 if (keyboard_check_pressed(Controls.toggle_phraseMode))
@@ -58,7 +72,7 @@ if (noteDir != NOTE_DIRECTION.NONE && canAttack)
 	#region Basic Notes
 	if (!phraseMode)
 	{
-		noteStruct = basicNote;
+		noteStruct = obj_game.basicNote;
 	}
 	
 	#endregion

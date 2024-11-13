@@ -7,7 +7,9 @@ image_speed = 0;
 #endregion
 
 #region Note variables
+hp = 1;
 damage = 1;
+knockback = 0;
 
 moveSpeed = obj_player.moveSpeed + 1;
 moveSpeed_diag = obj_player.moveSpeed_diag + 1;

@@ -36,7 +36,7 @@ basicNote =
 #endregion
 
 #region Phrases - Level 1
-phrasesPool = [
+poolPhrases = [
 	//QuarterNote: 
 	{
 			name: "Quarter Note",

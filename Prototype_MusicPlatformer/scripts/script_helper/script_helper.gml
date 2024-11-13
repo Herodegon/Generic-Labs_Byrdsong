@@ -12,7 +12,12 @@ function spawnPlayer()
 	instance_create_layer(obj_x,obj_y,"Instances",obj_player);
 };
 
+function initEnemySpawner()
+{
+	instance_create_layer(0,0,"Instances",obj_enemySpawner);
+};
+
 function initPhraseStore()
 {
-	instance_create_layer(0,0,"Instances",obj_player);
-}
+	instance_create_layer(0,0,"Instances",obj_phraseStore);
+};
