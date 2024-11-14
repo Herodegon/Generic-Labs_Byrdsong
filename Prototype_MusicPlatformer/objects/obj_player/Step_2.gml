@@ -2,8 +2,18 @@
 // You can write your code in this editor
 
 #region Sprite
+#region Death State
+if (sprite_index == spr_player_dead)
+{
+	if (image_index == sprite_get_number(sprite_index))
+	{
+		instance_destroy();
+	}
+}
 
-if (canAttack == false)
+#endregion
+
+else if (canAttack == false)
 {
 	if (sprite_index != spr_player_playing) {sprite_index = spr_player_playing;}
 }

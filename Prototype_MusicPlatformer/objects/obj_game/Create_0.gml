@@ -8,7 +8,7 @@
 
 #region Initialize main game variables
 //These are variables used or tracked by the game's larger systems
-global.windowScale = 8;
+global.windowScale = 10;
 global.gameTimer = 0;				//Time passed in seconds
 
 #endregion

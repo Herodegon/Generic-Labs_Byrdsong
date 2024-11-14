@@ -6,8 +6,8 @@ event_inherited();
 
 image_speed = 1;
 
-hp = 10;
+hp = 100;
 knockback += 1;
 
-despawnTime = image_number*2;
+despawnTime = sprite_get_number(sprite_index)*2;
 alarm[0] = despawnTime;

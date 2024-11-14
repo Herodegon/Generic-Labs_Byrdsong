@@ -3,6 +3,7 @@
 function initWindow()
 {
 	window_set_size(160*global.windowScale,90*global.windowScale);
+	window_center()
 };
 
 function initCamera()

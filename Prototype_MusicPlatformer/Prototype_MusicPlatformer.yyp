@@ -40,6 +40,7 @@
   "name":"Prototype_MusicPlatformer",
   "resources":[
     {"id":{"name":"fnt_button","path":"fonts/fnt_button/fnt_button.yy",},},
+    {"id":{"name":"fnt_gameText","path":"fonts/fnt_gameText/fnt_gameText.yy",},},
     {"id":{"name":"obj_block","path":"objects/obj_block/obj_block.yy",},},
     {"id":{"name":"obj_button_help","path":"objects/obj_button_help/obj_button_help.yy",},},
     {"id":{"name":"obj_button_parent","path":"objects/obj_button_parent/obj_button_parent.yy",},},
@@ -70,6 +71,7 @@
     {"id":{"name":"spr_game_start","path":"sprites/spr_game_start/spr_game_start.yy",},},
     {"id":{"name":"spr_play_1","path":"sprites/spr_play_1/spr_play_1.yy",},},
     {"id":{"name":"spr_play","path":"sprites/spr_play/spr_play.yy",},},
+    {"id":{"name":"spr_player_dead","path":"sprites/spr_player_dead/spr_player_dead.yy",},},
     {"id":{"name":"spr_player_down","path":"sprites/spr_player_down/spr_player_down.yy",},},
     {"id":{"name":"spr_player_playing","path":"sprites/spr_player_playing/spr_player_playing.yy",},},
     {"id":{"name":"spr_player_side","path":"sprites/spr_player_side/spr_player_side.yy",},},

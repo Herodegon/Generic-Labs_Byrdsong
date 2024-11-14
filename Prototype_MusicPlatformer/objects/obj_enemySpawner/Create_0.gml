@@ -1,12 +1,13 @@
 /// @description Initialize spawner
 // You can write your code in this editor
 
-function spawnEnemies(num,obj)
+function spawnEnemies(num,obj,spr)
 {
 	var camera = getCameraFeatures();
 	for (var i = 0; i < num; i++)
 	{
-		var spacing_w
+		var spacing_w = sprite_get_width(spr)*2;
+		var spacing_h = sprite_get_height(spr)*2;
 		var obj_x = 0;
 		var obj_y = 0;
 		var randWall = round(random(3));
@@ -14,18 +15,18 @@ function spawnEnemies(num,obj)
 		{
 			case 0:		//Left Wall
 				obj_x = camera.cam_x;
-				obj_y = round(random_range(camera.cam_y,camera.cam_y+camera.cam_h))+sprite_get_height(obj.sprite_index);
+				obj_y = round(random_range(camera.cam_y,camera.cam_y+camera.cam_h))-spacing_w;
 				break;
 			case 1:		//Right Wall
 				obj_x = camera.cam_x+camera.cam_w;
-				obj_y = round(random_range(camera.cam_y,camera.cam_y+camera.cam_h));
+				obj_y = round(random_range(camera.cam_y,camera.cam_y+camera.cam_h))+spacing_w;
 				break;
 			case 2:		//Top Wall
-				obj_x = round(random_range(camera.cam_x,camera.cam_x+camera.cam_w));
+				obj_x = round(random_range(camera.cam_x,camera.cam_x+camera.cam_w))-spacing_h;
 				obj_y = camera.cam_y;
 				break;
 			case 3:		//Bottom Wall
-				obj_x = round(random_range(camera.cam_x,camera.cam_x+camera.cam_w));
+				obj_x = round(random_range(camera.cam_x,camera.cam_x+camera.cam_w))+spacing_h;
 				obj_y = camera.cam_y+camera.cam_h;
 				break;
 		}

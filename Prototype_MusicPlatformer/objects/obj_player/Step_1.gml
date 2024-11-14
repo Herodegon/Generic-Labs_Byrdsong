@@ -42,8 +42,16 @@ with (obj_enemy)
 {
 	if (instance_place(x,y,other))
 	{
-		other.hp -= damage;
+		if (other.hp > 0)
+		{
+			other.hp -= damage;
+		}
 	}
+}
+
+if (hp < 0)
+{
+	hp = 0;
 }
 
 #endregion
@@ -51,7 +59,10 @@ with (obj_enemy)
 #region Health Check
 if (hp <= 0)
 {
-	instance_destroy();	
+	sprite_index = spr_player_dead;
+	image_speed = 0.2;
+	canMove = false;
+	canAttack = false;
 }
 
 #endregion

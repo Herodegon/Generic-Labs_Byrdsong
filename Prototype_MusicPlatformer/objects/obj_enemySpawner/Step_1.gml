@@ -13,7 +13,7 @@ if (currTime < prevTime)
 			if (poolEnemies[i].cost <= currBudget)
 			{
 				var numEnemies = round(random(currBudget/poolEnemies[i].cost));
-				spawnEnemies(numEnemies,poolEnemies[i].object);
+				spawnEnemies(numEnemies,poolEnemies[i].object,poolEnemies[i].sprite);
 				currBudget -= poolEnemies[i].cost*numEnemies;
 			}				
 		}
