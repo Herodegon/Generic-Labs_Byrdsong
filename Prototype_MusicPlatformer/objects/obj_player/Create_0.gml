@@ -4,6 +4,8 @@
 #macro MAX_INPUT_TIMER 15
 #macro MAX_PICKUP_DISTANCE 16
 
+//TODO: Convert attack and input delays to use new gameTimer system
+
 global.gameTimer_start = get_timer();
 
 //Initialize player scripts

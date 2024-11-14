@@ -3,6 +3,8 @@
 #macro MAX_WINDOW_SIZE 12 // 12 = 1920x1080
 						  // 10 = 1600x900
 						  //  8 = 1280x720
+#macro MILLISECONDS 1000		//1 second = 1000 milliseconds
+#macro MICROSECONDS 1000000		//1 second = 1000000 microseconds
 
 #region Initialize main game variables
 //These are variables used or tracked by the game's larger systems

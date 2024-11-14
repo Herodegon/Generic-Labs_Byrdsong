@@ -37,7 +37,7 @@ if (currState == States.CHASE)
 	if (currState == States.CHASE)
 	{
 		var i = 0;
-		while(instance_place(x+move_x,y+move_y,obj_block))
+		while(instance_place(x+move_x,y+move_y,obj_block) || instance_place(x+move_x,y+move_y,obj_enemy))
 		{	
 			if (i == 2)
 			{
@@ -46,7 +46,7 @@ if (currState == States.CHASE)
 				break;
 			}
 			
-			if (instance_place(x,y+move_y,obj_block))
+			if (instance_place(x,y+move_y,obj_block) || instance_place(x,y+move_y,obj_enemy))
 			{
 				move_x = objSpeed*moveVector_x;
 				move_y = 0;

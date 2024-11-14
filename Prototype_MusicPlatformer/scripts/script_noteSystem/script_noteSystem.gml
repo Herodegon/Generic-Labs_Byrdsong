@@ -98,7 +98,7 @@ function getPhrase(phrases,queue)
 	var phrase = noone;
 	
 	#region Checking Unlocked Phrases
-	for (i = 0; i < array_length(phrases); i++)
+	for (var i = 0; i < array_length(phrases); i++)
 	{
 		if (array_length(queue) == array_length(phrases[i].combination))
 		{

@@ -8,7 +8,7 @@
  */
 
 #region Phrase Template
-phrase_Example = 
+phraseExample = 
 {
 	name: "Quarter Note",					// Name of Special Move 
 	noteType: NOTE_TYPE.SINGLENOTE,			// Type of Move

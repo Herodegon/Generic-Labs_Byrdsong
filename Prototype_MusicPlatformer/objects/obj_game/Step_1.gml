@@ -4,7 +4,7 @@
 #region Update Timer
 if (instance_exists(obj_player))
 {
-	global.gameTimer = (get_timer()-global.gameTimer_start)/1000000;
+	global.gameTimer = int64((get_timer()-global.gameTimer_start)/MILLISECONDS);
 	show_debug_message("Game Time: {0}",global.gameTimer);
 }
 
