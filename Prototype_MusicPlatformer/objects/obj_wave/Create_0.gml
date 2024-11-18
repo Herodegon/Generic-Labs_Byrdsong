@@ -9,5 +9,5 @@ image_speed = 1;
 hp = 100;
 knockback += 1;
 
-despawnTime = sprite_get_number(sprite_index)*2;
-alarm[0] = despawnTime;
+//Timer ends when animation has finished playing
+despawnTimer = sprite_get_number(sprite_index)*global.deltaTime;

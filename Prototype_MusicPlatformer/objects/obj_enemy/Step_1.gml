@@ -36,28 +36,24 @@ if (currState == States.CHASE)
 	#region Collision
 	if (currState == States.CHASE)
 	{
-		var i = 0;
-		while(instance_place(x+move_x,y+move_y,obj_block) || instance_place(x+move_x,y+move_y,obj_enemy))
+		if (instance_place(x+move_x,y+move_y,obj_block) || instance_place(x+move_x,y+move_y,obj_enemy))
 		{	
-			if (i == 2)
+			var obj = noone;
+			if (instance_place(x+move_x,y+move_y,obj_enemy))
 			{
-				move_x = 0;
-				move_y = 0;
-				break;
-			}
-			
-			if (instance_place(x,y+move_y,obj_block) || instance_place(x,y+move_y,obj_enemy))
-			{
-				move_x = objSpeed*moveVector_x;
-				move_y = 0;
+				obj = instance_place(x+move_x,y+move_y,obj_enemy);
 			}
 			else
 			{
-				move_y = objSpeed*moveVector_y;
-				move_x = 0;
+				obj = instance_place(x+move_x,y+move_y,obj_block);
 			}
 			
-			i++;
+			if (obj)
+			{
+				var vector = point_direction(x+move_x,y+move_y,obj.x,obj.y);
+				x -= dcos(vector);
+				y += dsin(vector);
+			}
 		}
 	}
 	x += move_x;

@@ -22,11 +22,19 @@ function initCamera()
 function getCameraFeatures()
 {
 	var objCamera = view_camera[0];
+	
+	var obj_x = camera_get_view_x(objCamera);
+	var obj_y = camera_get_view_y(objCamera);
+	var obj_w = camera_get_view_width(objCamera);
+	var obj_h = camera_get_view_height(objCamera);
+	
 	camera = {
-		cam_x: camera_get_view_x(objCamera),
-		cam_y: camera_get_view_y(objCamera),
-		cam_w: camera_get_view_width(objCamera),
-		cam_h: camera_get_view_height(objCamera),
+		cam_x: obj_x,
+		cam_y: obj_y,
+		cam_w: obj_w,
+		cam_h: obj_h,
+		cam_centerX: obj_x+(obj_w/2),
+		cam_centerY: obj_y+(obj_h/2)
 	}
 	
 	return camera;

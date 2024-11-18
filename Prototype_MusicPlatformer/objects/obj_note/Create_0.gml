@@ -15,7 +15,6 @@ moveSpeed = obj_player.moveSpeed + 1;
 moveSpeed_diag = obj_player.moveSpeed_diag + 1;
 moveVector_x = 0;
 moveVector_y = 0;
-despawnTime = obj_player.noteDelay*2;
-alarm[0] = despawnTime;
+despawnTimer = obj_player.attackDelay*2;
 
 #endregion

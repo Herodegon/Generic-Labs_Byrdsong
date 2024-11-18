@@ -4,12 +4,16 @@
 function spawnEnemies(num,obj,spr)
 {
 	var camera = getCameraFeatures();
+	var padding = sprite_get_width(spr);
+	var obj_radius = camera.cam_w+padding;
 	for (var i = 0; i < num; i++)
 	{
-		var spacing_w = sprite_get_width(spr)*2;
-		var spacing_h = sprite_get_height(spr)*2;
-		var obj_x = 0;
-		var obj_y = 0;
+		var obj_dir = random(360);
+		var dist_x = round(obj_radius*dcos(obj_dir));
+		var dist_y = round(obj_radius*dsin(obj_dir));
+		var obj_x = camera.cam_centerX+dist_x;
+		var obj_y = camera.cam_centerY+dist_y;
+		/*
 		var randWall = round(random(3));
 		switch(randWall)
 		{
@@ -30,6 +34,7 @@ function spawnEnemies(num,obj,spr)
 				obj_y = camera.cam_y+camera.cam_h;
 				break;
 		}
+		*/
 		instance_create_layer(obj_x,obj_y,"Instances",obj);	
 	}
 }
@@ -43,6 +48,8 @@ poolEnemies = [
 	}
 ];
 
-maxBudget = 15;
+maxBudget = 5;
 waveTimer = 3*MILLISECONDS;		//Time in milliseconds
-prevTime = 0;
+currTimer = waveTimer;
+
+canSpawn = true;

@@ -1,8 +1,8 @@
 /// @description Spawn enemies
 // You can write your code in this editor
 
-var currTime = global.gameTimer%waveTimer;
-if (currTime < prevTime)
+currTimer -= global.deltaTime;
+if ((currTimer <= 0 && canSpawn) || global.forceSpawn)
 {
 	var currBudget = maxBudget;
 	while (currBudget > 0)
@@ -15,9 +15,11 @@ if (currTime < prevTime)
 				var numEnemies = round(random(currBudget/poolEnemies[i].cost));
 				spawnEnemies(numEnemies,poolEnemies[i].object,poolEnemies[i].sprite);
 				currBudget -= poolEnemies[i].cost*numEnemies;
+				global.numEnemies += numEnemies;
 			}				
 		}
 	}
+	currTimer = waveTimer;
 }
 
-prevTime = currTime;
+show_debug_message("Num Enemies: {0}",global.numEnemies);

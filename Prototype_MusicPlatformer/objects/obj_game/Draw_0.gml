@@ -5,7 +5,7 @@
 
 var camera = getCameraFeatures();
 
-if (instance_exists(obj_player))
+if (instance_exists(obj_player) && global.toggleGUI)
 {
 	draw_set_font(fnt_gameText);
 	draw_set_color(c_purple);

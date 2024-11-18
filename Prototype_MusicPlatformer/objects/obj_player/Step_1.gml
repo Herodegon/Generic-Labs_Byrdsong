@@ -29,8 +29,9 @@ if (canMove)
 	}
 
 	// Once calculations and collisions have been handled, move player
-	x += move_x;
-	y += move_y; 
+	moveMap(move_x,move_y);
+	//x += move_x;
+	//y += move_y; 
 	
 	#endregion
 }
@@ -57,7 +58,7 @@ if (hp < 0)
 #endregion
 
 #region Health Check
-if (hp <= 0)
+if (hp <= 0 && !isInvincible)
 {
 	sprite_index = spr_player_dead;
 	image_speed = 0.2;
@@ -98,7 +99,7 @@ if (noteDir != NOTE_DIRECTION.NONE && canAttack)
 			{
 				//show_debug_message("Dir: {0}", noteDir);
 				array_push(inputQueue,noteDir);
-				alarm[1] = inputTimer;
+				inputTimer = inputWindow;
 			}
 			currPhrase = getPhrase(availablePhrases,inputQueue);
 			if (currPhrase)
@@ -131,7 +132,7 @@ if (noteDir != NOTE_DIRECTION.NONE && canAttack)
 	{
 		fireNote(noteStruct,noteDir);
 		canAttack = false;
-		alarm[0] = noteDelay;
+		attackTimer = attackDelay;
 	}
 	
 	#endregion
@@ -139,6 +140,21 @@ if (noteDir != NOTE_DIRECTION.NONE && canAttack)
 else if (currPhrase && noteDir == NOTE_DIRECTION.NONE)		// Wait for player to stop inputting directions
 {
 	canAttack = true;
+}
+
+#endregion
+
+#region Timers
+if (attackTimer > 0)
+{
+	attackTimer -= global.deltaTime;
+	if (attackTimer <= 0) {canAttack = true;}
+}
+
+if (inputTimer > 0)
+{
+	inputTimer -= global.deltaTime;	
+	if (inputTimer <= 0) {inputQueue = [];}
 }
 
 #endregion

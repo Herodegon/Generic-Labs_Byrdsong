@@ -11,7 +11,7 @@ enum States {
 	CHASE
 }
 
-hp = 3;			//Number of hits before enemy is destroyed
+hp = 1;			//Number of hits before enemy is destroyed
 damage = 1;		//Damage enemy deals
 
 moveSpeed = 1;

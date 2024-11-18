@@ -9,7 +9,13 @@
 #region Initialize main game variables
 //These are variables used or tracked by the game's larger systems
 global.windowScale = 10;
-global.gameTimer = 0;				//Time passed in seconds
+global.gameTimer_start = -1;
+global.gameTimer = 0;				//Time passed since player spawned
+global.deltaTime = 0;				//Amount of time passed between frames
+global.toggleGUI = false;			//Allows GUI to draw
+global.forceSpawn = false;
+
+global.numEnemies = 0;
 
 #endregion
 

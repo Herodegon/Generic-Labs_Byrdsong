@@ -4,7 +4,4 @@
 // Inherit the parent event
 event_inherited();
 
-hp = 500;
-damage += 1;
-
-despawnTimer = obj_player.attackDelay*3;
+show_debug_message("Image Index: {0}/{1}",image_index,sprite_get_number(sprite_index));
