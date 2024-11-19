@@ -24,16 +24,22 @@ function initPhraseStore()
 
 function moveMap(objMove_x,objMove_y)
 {
-	//TODO: Get background to scroll with player movement
-	var background_id = layer_background_get_id("Background");
-	var sprite_id = layer_background_get_sprite(background_id);
-	var background_x = layer_get_x(background_id);
-	var background_y = layer_get_y(background_id);
-	//layer_sprite_x(sprite_id,background_x-objMove_x);
-	//layer_sprite_y(sprite_id,background_y-objMove_y);
-	//layer_vspeed(background_id,-objMove_x);
-	//layer_hspeed(background_id,-objMove_y);
-	/*
+	var layer_background = layer_get_id("Background");
+	layer_hspeed(layer_background,-objMove_x);
+	layer_vspeed(layer_background,-objMove_y);
+	
+	if (instance_exists(obj_note))
+	{
+		with (obj_note)
+		{
+			if (!isPlayerLocked)
+			{
+				x -= objMove_x;
+				y -= objMove_y;
+			}
+		}
+	}
+	
 	if (instance_exists(obj_enemy))
 	{
 		with (obj_enemy)
@@ -42,5 +48,4 @@ function moveMap(objMove_x,objMove_y)
 			y -= objMove_y;
 		}
 	}
-	*/
 }

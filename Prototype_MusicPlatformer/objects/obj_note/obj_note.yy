@@ -9,8 +9,8 @@
   "name":"obj_note",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Note Types",
+    "path":"folders/Objects/Note Types.yy",
   },
   "parentObjectId":null,
   "persistent":false,

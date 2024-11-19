@@ -9,8 +9,8 @@
   "name":"obj_enemySpawner",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Main Game Systems",
+    "path":"folders/Objects/Main Game Systems.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -7,4 +7,5 @@ event_inherited();
 hp = 500;
 damage += 1;
 
-despawnTimer = obj_player.attackDelay*3;
+despawnTimer *= 2;
+isPlayerLocked = false;

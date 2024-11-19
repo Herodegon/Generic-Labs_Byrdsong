@@ -48,8 +48,9 @@ poolEnemies = [
 	}
 ];
 
+//TODO: Add enemy instance limit
 maxBudget = 5;
-waveTimer = 3*MILLISECONDS;		//Time in milliseconds
+waveTimer = 5*MILLISECONDS;		//Time in milliseconds
 currTimer = waveTimer;
 
 canSpawn = true;

@@ -8,8 +8,8 @@
   "name":"obj_quarternote",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Note Types",
+    "path":"folders/Objects/Note Types.yy",
   },
   "parentObjectId":{
     "name":"obj_note",
