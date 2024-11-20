@@ -39,7 +39,10 @@ if (hp <= 0)
 #endregion
 
 #region Timer
-despawnTimer -= global.deltaTime;
-if (despawnTimer <= 0 && isDespawnSet) {instance_destroy();}
+if (isDespawnSet)
+{
+	despawnTimer -= global.deltaTime;
+	if (despawnTimer <= 0) {instance_destroy();}
+}
 
 #endregion

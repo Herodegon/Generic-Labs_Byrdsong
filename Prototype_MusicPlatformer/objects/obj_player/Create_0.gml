@@ -44,7 +44,8 @@ image_speed = 0;
 #region Player Variables
 
 #region Stat/Movement Variables
-hp = 100;
+max_hp = 100;
+hp = max_hp;
 moveSpeed = 2;
 moveSpeed_diag = moveSpeed-1;
 moveVector_x = 0;
@@ -73,7 +74,7 @@ canAttack = true;
 canMove = true;
 phraseMode = false;
 
-isInvincible = true			// Debug option
+isInvincible = true;			// Debug option
 
 #endregion
 

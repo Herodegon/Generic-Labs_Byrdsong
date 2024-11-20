@@ -5,3 +5,8 @@ if (keyboard_check_pressed(ord("P")))
 {
 	global.forceSpawn = true;
 }
+
+if (keyboard_check_pressed(ord("I")))
+{
+	isInvincible = !isInvincible;
+}
