@@ -167,7 +167,7 @@ if(instance_exists(obj_soundMachine)) {
 		obj_soundMachine.walkingLoudness += (1 / fps) / 3; 
 		obj_soundMachine.walkingLoudness = min(obj_soundMachine.walkingLoudness, 1); // Cap walking loudness at 1
 	}else {
-		// Add a number to walkingLoudness such that it take 1 second to get to min volume
+		// Subtract a number to walkingLoudness such that it take 1 second to get to min volume
 		obj_soundMachine.walkingLoudness -= (1 / fps) / 5;
 		obj_soundMachine.walkingLoudness = max(obj_soundMachine.walkingLoudness, 0);// Cap walking loudness at 0
 	}
@@ -175,6 +175,15 @@ if(instance_exists(obj_soundMachine)) {
 	#endregion
 	
 	#region Music attack calculations
+	if(keyboard_check(Controls.note_right) or keyboard_check(Controls.note_left) or keyboard_check(Controls.note_up) or keyboard_check(Controls.note_down)) {
+		// Add a number to singingLoudness such that it takes 3 seconds to get to full volume
+		obj_soundMachine.singingLoudness += (1 / fps) / 3; 
+		obj_soundMachine.singingLoudness = min(obj_soundMachine.singingLoudness, 1); // Cap singing loudness at 1
+	}else {
+		// Subtract a number to singingLoudness such that it take 1 second to get to min volume
+		obj_soundMachine.singingLoudness -= (1 / fps) / 5;
+		obj_soundMachine.singingLoudness = max(obj_soundMachine.singingLoudness, 0);// Cap singing loudness at 0
+	}
 	
 	#endregion
 }
