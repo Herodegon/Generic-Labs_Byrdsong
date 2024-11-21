@@ -7,9 +7,9 @@
   },
   "bitDepth":1,
   "bitRate":128,
-  "compression":0,
+  "compression":3,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":8.6268,
   "name":"snd_byrdSinging",
   "parent":{
     "name":"adaptiveMusic",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_byrdSinging",
+  "soundFile":"snd_byrdSinging.mp3",
   "type":0,
   "volume":1.0,
 }
