@@ -74,7 +74,7 @@ canAttack = true;
 canMove = true;
 phraseMode = false;
 
-isInvincible = true;			// Debug option
+isInvincible = false;			// Debug option
 
 #endregion
 

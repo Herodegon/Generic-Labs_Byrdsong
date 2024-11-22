@@ -22,9 +22,9 @@ if (instance_exists(obj_player))
 		if (hp < max_hp)
 		{
 			var rect_x1 = x-(sprite_get_width(sprite_index)/2);
-			var rect_y1 = y+(sprite_get_width(sprite_index));
+			var rect_y1 = y+(sprite_get_width(sprite_index)/2);
 			var rect_x2 = x+(sprite_get_width(sprite_index)/2);
-			var rect_y2 = rect_y1+(sprite_get_width(sprite_index)/4);
+			var rect_y2 = rect_y1+(sprite_get_width(sprite_index)/8);
 			draw_set_color(c_black);
 			draw_rectangle(rect_x1,rect_y1,rect_x2,rect_y2,false);
 			

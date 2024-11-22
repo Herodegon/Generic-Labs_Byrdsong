@@ -23,6 +23,7 @@ despawnTimer = obj_player.attackDelay*2;
 #region Default flags
 isDespawnSet = true;
 isPlayerLocked = true;
+canMove = true;
 
 #endregion
 
