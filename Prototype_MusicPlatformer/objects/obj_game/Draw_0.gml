@@ -19,21 +19,16 @@ if (instance_exists(obj_player))
 {
 	with (obj_player)
 	{
+		var spriteWidth = sprite_get_width(sprite_index);
+		var barOffset = spriteWidth/4;	//Amount of distance each progress bar has between each other
 		if (hp < max_hp)
 		{
-			var rect_x1 = x-(sprite_get_width(sprite_index)/2);
-			var rect_y1 = y+(sprite_get_width(sprite_index)/2);
-			var rect_x2 = x+(sprite_get_width(sprite_index)/2);
-			var rect_y2 = rect_y1+(sprite_get_width(sprite_index)/8);
-			draw_set_color(c_black);
-			draw_rectangle(rect_x1,rect_y1,rect_x2,rect_y2,false);
-			
-			if (hp > 0)
-			{
-				var health_width = ((rect_x2-rect_x1)/max_hp)*hp;
-				draw_set_color(c_red);
-				draw_rectangle(rect_x1,rect_y1,rect_x1+health_width,rect_y2,false);
-			}
+			DrawProgressBar(x,y,spriteWidth,max_hp,hp,c_red);
+		}
+		
+		if (xp < max_xp)
+		{
+			DrawProgressBar(x,y+barOffset,spriteWidth,max_xp,xp,c_aqua);
 		}
 	}
 }

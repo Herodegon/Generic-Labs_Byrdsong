@@ -28,12 +28,31 @@ if (canMove)
 		move_y = 0;
 	}
 
-	// Once calculations and collisions have been handled, move player
+	// Once calculations and collisions have been handled,
+	// move map by (back_x-move_x,back_y-move_y)
 	moveMap(move_x,move_y);
 	//x += move_x;
 	//y += move_y; 
 	
 	#endregion
+}
+else	// Reset Background Movement
+{
+	move_x = 0;
+	move_y = 0;
+	moveMap(move_x,move_y);
+}
+
+#endregion
+
+#region Check XP collision
+with (obj_xp)
+{
+	if (instance_place(x,y,other))
+	{
+		other.xp += xpGain;
+		instance_destroy();
+	}
 }
 
 #endregion
@@ -64,6 +83,16 @@ if (hp <= 0 && !isInvincible)
 	image_speed = 0.2;
 	canMove = false;
 	canAttack = false;
+}
+
+#endregion
+
+#region Level Up Check
+if (xp >= max_xp)
+{
+	hp = max_hp;
+	xp = xp % max_xp;
+	max_xp *= 2;
 }
 
 #endregion

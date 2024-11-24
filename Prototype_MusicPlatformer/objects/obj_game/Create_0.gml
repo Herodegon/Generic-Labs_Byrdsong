@@ -34,7 +34,7 @@ script_phrases();
 #region Initialize player and level up system
 spawnPlayer();
 initEnemySpawner();
-//initPhraseStore();
+initPhraseStore();
 
 #endregion
 

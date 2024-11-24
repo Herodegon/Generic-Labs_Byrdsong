@@ -46,6 +46,11 @@ image_speed = 0;
 #region Stat/Movement Variables
 max_hp = 100;
 hp = max_hp;
+max_xp = 10;
+xp = 0;
+level = 0;
+itemPullRange = sprite_get_width(sprite_index)*2;
+
 moveSpeed = 2;
 moveSpeed_diag = moveSpeed-1;
 moveVector_x = 0;
@@ -72,6 +77,7 @@ inputQueue = [];				// Array of enum "Note_Direction"
 #region Flags
 canAttack = true;
 canMove = true;
+canLevelUp = false;
 phraseMode = false;
 
 isInvincible = false;			// Debug option

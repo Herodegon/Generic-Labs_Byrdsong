@@ -12,6 +12,11 @@ function spawnPlayer()
 	instance_create_layer(obj_x,obj_y,"Instances",obj_player);
 };
 
+function spawnXP(xPos,yPos)
+{
+	instance_create_layer(xPos,yPos,"Instances",obj_xp);
+};
+
 function initEnemySpawner()
 {
 	instance_create_layer(0,0,"Instances",obj_enemySpawner);
@@ -48,4 +53,13 @@ function moveMap(objMove_x,objMove_y)
 			y -= objMove_y;
 		}
 	}
-}
+	
+	if (instance_exists(obj_xp))
+	{
+		with (obj_xp)
+		{
+			x -= objMove_x;
+			y -= objMove_y;
+		}
+	}
+};
