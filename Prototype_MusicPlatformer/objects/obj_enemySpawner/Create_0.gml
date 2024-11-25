@@ -10,7 +10,7 @@ enum SpawnWall
 	NONE
 }
 
-function spawnEnemies(num,obj,spr)
+spawnEnemies = function(num,obj,spr)
 {
 	var camera = getCameraFeatures();
 	var padding = sprite_get_width(spr);

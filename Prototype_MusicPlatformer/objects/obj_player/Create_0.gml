@@ -67,7 +67,7 @@ inputTimer = 0;
 #endregion
 
 #region Attack Variables
-availablePhrases = [obj_game.poolPhrases[0],obj_game.poolPhrases[1]];	// Array of struct "Phrase"
+availablePhrases = [obj_game.poolPhrases[0],obj_game.poolPhrases[1],obj_game.poolPhrases[2]];	// Array of struct "Phrase"
 currPhrase = noone;				// Selected phrase based on inputs
 prevDir = noone;				// Used to verify note input
 inputQueue = [];				// Array of enum "Note_Direction"

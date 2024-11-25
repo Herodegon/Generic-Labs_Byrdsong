@@ -25,7 +25,8 @@ enum NOTE_MOVEMENT
 {
 	STRAIGHT,		//Note travels in a straight line
 	RECTANGULAR,	//Note travels in a rectangular path about origin
-	CIRCULAR		//Note travels in a circular path about origin
+	CIRCULAR,		//Note travels in a circular path about origin
+	EXTEND			//Note extends from origin
 }
 
 function getNoteDirection(Controls)
@@ -164,14 +165,16 @@ function fireNote(struct,dir)
 			break;
 	}
 	var playerSprite = obj_player.sprite_index;
-	var obj_x = obj_player.x + (sprite_get_width(playerSprite)/2)*noteVector_x;
-	var obj_y = obj_player.y + (sprite_get_height(playerSprite)/2)*noteVector_y;
+	var obj_x = obj_player.x;
+	var obj_y = obj_player.y;
+	if (struct.noteType != NOTE_TYPE.ECHONOTE)
+	{
+		obj_x += (sprite_get_width(playerSprite)/2)*noteVector_x;
+		obj_y += (sprite_get_height(playerSprite)/2)*noteVector_y;
+	}
 	
 	var noteObj = instance_create_layer(obj_x,obj_y,"Instances",struct.object);
 	noteObj.moveVector_x = noteVector_x;
 	noteObj.moveVector_y = noteVector_y;
-	if (struct.noteType == NOTE_TYPE.WAVENOTE)
-	{
-		noteObj.image_angle = -45*dir;
-	}
+	noteObj.moveDir = dir;
 };

@@ -1,6 +1,15 @@
 /// @description Handle note movement
 // You can write your code in this editor
 
+#region Spawn Projectiles
+if (canSpawn)
+{
+	spawnProjPattern(id,projState,patternInfo,stats,true);
+	canSpawn = false;
+}
+
+#endregion
+
 #region Movement
 if (canMove && moveState == NOTE_MOVEMENT.STRAIGHT)
 {

@@ -6,13 +6,20 @@ event_inherited();
 
 if (instance_exists(objTether))
 {
-	if (canMove && moveState == NOTE_MOVEMENT.CIRCULAR)
+	if (canMove)
 	{
 		var posX = objTether.x + round(radius*dcos(angle));
 		var posY = objTether.y + round(radius*dsin(angle));
 		x = posX;
 		y = posY;
-		angle -= moveSpeed;
+		if (moveState == NOTE_MOVEMENT.CIRCULAR)
+		{
+			angle -= moveSpeed;
+		}
+		else if (moveState == NOTE_MOVEMENT.EXTEND)
+		{
+			radius += moveSpeed;
+		}
 	}
 }
 else

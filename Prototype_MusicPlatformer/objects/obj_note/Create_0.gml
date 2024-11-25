@@ -16,12 +16,21 @@ stats =
 }
 hp = stats.max_hp;
 
+patternInfo =
+{
+	numNotes: 4,
+	maxAngle: 360,
+	minAngle: 0,
+	radius: 8
+}
+
 #endregion
 
 moveSpeed = obj_player.moveSpeed + 1;
 moveSpeed_diag = obj_player.moveSpeed_diag + 1;
 moveVector_x = 0;
 moveVector_y = 0;
+moveDir = noone;
 
 moveState = NOTE_MOVEMENT.STRAIGHT;
 
@@ -31,6 +40,7 @@ despawnTimer = obj_player.attackDelay*2;
 isDespawnSet = true;		//Set if object will despawn after x amount of time
 isPlayerLocked = true;		//Movement locked to player's position
 canMove = true;				//Will move each frame
+canSpawn = false;			//Is able to spawn projectiles
 isInvincible = false;		//Object does not die
 
 #endregion
