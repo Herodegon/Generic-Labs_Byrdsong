@@ -12,7 +12,7 @@ global.windowScale = 10;
 global.gameTimer_start = -1;
 global.gameTimer = 0;				//Time passed since player spawned
 global.deltaTime = 0;				//Amount of time passed between frames
-global.toggleGUI = false;			//Allows GUI to draw
+global.toggleGUI = true;			//Allows GUI to draw
 global.forceSpawn = false;
 
 global.numEnemies = 0;
@@ -31,10 +31,11 @@ script_phrases();
 
 #endregion
 
-#region Initialize player and level up system
+#region Initialize player and major game systems
 spawnPlayer();
 initEnemySpawner();
 initPhraseStore();
+//initSoundMachine();
 
 #endregion
 

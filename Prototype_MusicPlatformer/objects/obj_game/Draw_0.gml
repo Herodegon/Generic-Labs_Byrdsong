@@ -5,17 +5,8 @@
 
 var camera = getCameraFeatures();
 
-if (instance_exists(obj_player) && global.toggleGUI)
-{
-	draw_set_font(fnt_gameText);
-	draw_set_color(c_purple);
-	draw_text(camera.cam_x,camera.cam_y,string("{0}: DOWN,DOWNRIGHT,RIGHT",obj_player.availablePhrases[0].name));
-	draw_text(camera.cam_x,camera.cam_y+16,string("{0}: LEFT,RIGHT,DOWN",obj_player.availablePhrases[1].name));
-	draw_text(camera.cam_x,camera.cam_y+camera.cam_h-16,string("HP: {0}",obj_player.hp));
-}
-
 #region Player HP and EXP
-if (instance_exists(obj_player))
+if (instance_exists(obj_player) && global.toggleGUI)
 {
 	with (obj_player)
 	{

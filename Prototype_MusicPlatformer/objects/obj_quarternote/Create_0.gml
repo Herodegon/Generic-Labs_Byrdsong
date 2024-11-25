@@ -4,8 +4,12 @@
 // Inherit the parent event
 event_inherited();
 
-hp = 500;
-damage += 1;
+stats =
+{
+	max_hp: 500,
+	damage: 2,
+	knockback: 0
+}
 
 despawnTimer *= 2;
 isPlayerLocked = false;

@@ -6,8 +6,12 @@ event_inherited();
 
 image_speed = 1;
 
-hp = 100;
-knockback += 1;
+stats = 
+{
+	max_hp: 100,
+	damage: 1,
+	knockback: 1
+}
 
 despawnTimer = ((sprite_get_number(sprite_index)-1)*2)*game_get_speed(gamespeed_microseconds)/MILLISECONDS;
 canMove = false;

@@ -44,11 +44,11 @@ image_speed = 0;
 #region Player Variables
 
 #region Stat/Movement Variables
-max_hp = 100;
+max_hp = 100;			//HP set on game start
 hp = max_hp;
-max_xp = 10;
+max_xp = 10;			//XP needed to level up
 xp = 0;
-level = 0;
+level = 0;				//Number of levels gained
 itemPullRange = sprite_get_width(sprite_index)*2;
 
 moveSpeed = 2;
@@ -74,14 +74,17 @@ inputQueue = [];				// Array of enum "Note_Direction"
 
 #endregion
 
-#region Flags
+#endregion
+
+#region Gameplay Flags
 canAttack = true;
 canMove = true;
 canLevelUp = false;
 phraseMode = false;
 
-isInvincible = false;			// Debug option
-
 #endregion
+
+#region Debug Flags
+isInvincible = false;
 
 #endregion

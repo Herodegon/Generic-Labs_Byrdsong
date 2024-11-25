@@ -30,10 +30,9 @@ if (canMove)
 
 	// Once calculations and collisions have been handled,
 	// move map by (back_x-move_x,back_y-move_y)
-	moveMap(move_x,move_y);
+	moveMap(round(move_x),round(move_y));
 	//x += move_x;
 	//y += move_y; 
-	
 	#endregion
 }
 else	// Reset Background Movement
@@ -93,6 +92,7 @@ if (xp >= max_xp)
 	hp = max_hp;
 	xp = xp % max_xp;
 	max_xp *= 2;
+	canLevelUp = true;
 }
 
 #endregion

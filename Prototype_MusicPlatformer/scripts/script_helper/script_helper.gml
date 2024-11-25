@@ -12,10 +12,24 @@ function spawnPlayer()
 	instance_create_layer(obj_x,obj_y,"Instances",obj_player);
 };
 
-function spawnXP(xPos,yPos)
+function spawnXP(pos_x,pos_y)
 {
-	instance_create_layer(xPos,yPos,"Instances",obj_xp);
+	instance_create_layer(pos_x,pos_y,"Instances",obj_xp);
 };
+
+function spawnPhraseNote(obj,moveState,angle,radius,stats)
+{
+	var pos_x = obj.x + (radius*dcos(angle));
+	var pos_y = obj.y + (radius*dsin(angle));
+	var objNote = instance_create_layer(pos_x,pos_y,"Instances",obj_phraseNote);
+	objNote.moveState = moveState;
+	objNote.objTether = obj;
+	objNote.radius = radius;
+	objNote.angle = angle;
+	
+	objNote.stats = stats;
+	objNote.hp = stats.max_hp;
+}
 
 function initEnemySpawner()
 {
@@ -26,6 +40,11 @@ function initPhraseStore()
 {
 	instance_create_layer(0,0,"Instances",obj_phraseStore);
 };
+
+function initSoundMachine()
+{
+	instance_create_layer(0,0,"Instances",obj_soundMachine);
+}
 
 function moveMap(objMove_x,objMove_y)
 {

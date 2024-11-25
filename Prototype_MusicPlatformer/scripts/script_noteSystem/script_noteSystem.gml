@@ -21,6 +21,13 @@ enum NOTE_TYPE
 	ECHONOTE	//AOE multi-direction attacks
 };
 
+enum NOTE_MOVEMENT
+{
+	STRAIGHT,		//Note travels in a straight line
+	RECTANGULAR,	//Note travels in a rectangular path about origin
+	CIRCULAR		//Note travels in a circular path about origin
+}
+
 function getNoteDirection(Controls)
 {
 	//Get vector of attack inputs
@@ -166,6 +173,5 @@ function fireNote(struct,dir)
 	if (struct.noteType == NOTE_TYPE.WAVENOTE)
 	{
 		noteObj.image_angle = -45*dir;
-		//noteObj.image_angle = point_direction(0,0,noteVector_x,noteVector_y);
 	}
 };

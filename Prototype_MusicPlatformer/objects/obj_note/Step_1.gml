@@ -2,32 +2,38 @@
 // You can write your code in this editor
 
 #region Movement
-if (canMove)
+if (canMove && moveState == NOTE_MOVEMENT.STRAIGHT)
 {
 	var objSpeed = moveSpeed;
 	if (moveVector_x != 0 && moveVector_y != 0) 
 	{
 		objSpeed = moveSpeed_diag;
 	}
-	x += objSpeed*moveVector_x;
-	y += objSpeed*moveVector_y;
+	var deltaX = objSpeed*moveVector_x;
+	var deltaY = objSpeed*moveVector_y;
+		
+	x += deltaX;
+	y += deltaY;
 }
 
 #endregion
 
 #region Collision
-with (obj_enemy)
+if (!isInvincible)
 {
-	if (instance_place(x,y,other))
+	with (obj_enemy)
 	{
-		//Knockback
-		if (other.knockback != 0)
+		if (instance_place(x,y,other))
 		{
-			x += other.moveVector_x*(sprite_get_width(sprite_index)/4)*other.knockback;
-			y += other.moveVector_y*(sprite_get_height(sprite_index)/4)*other.knockback;
+			//Knockback
+			if (other.stats.knockback != 0)
+			{
+				x += other.moveVector_x*(sprite_get_width(sprite_index)/4)*other.stats.knockback;
+				y += other.moveVector_y*(sprite_get_height(sprite_index)/4)*other.stats.knockback;
+			}
+			hp -= other.stats.damage;
+			other.hp--;
 		}
-		hp -= other.damage;
-		other.hp--;
 	}
 }
 
