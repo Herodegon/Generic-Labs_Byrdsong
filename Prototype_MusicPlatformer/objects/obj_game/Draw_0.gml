@@ -14,12 +14,12 @@ if (instance_exists(obj_player) && global.toggleGUI)
 		var barOffset = spriteWidth/4;	//Amount of distance each progress bar has between each other
 		if (hp < max_hp)
 		{
-			DrawProgressBar(x,y,spriteWidth,max_hp,hp,c_red);
+			drawProgressBar(x,y,spriteWidth,max_hp,hp,c_red);
 		}
 		
 		if (xp < max_xp)
 		{
-			DrawProgressBar(x,y+barOffset,spriteWidth,max_xp,xp,c_aqua);
+			drawProgressBar(x,y+barOffset,spriteWidth,max_xp,xp,c_aqua);
 		}
 	}
 }

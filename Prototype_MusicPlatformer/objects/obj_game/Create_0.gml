@@ -13,11 +13,15 @@ global.gameTimer_start = -1;
 global.gameTimer = 0;				//Time passed since player spawned
 global.deltaTime = 0;				//Amount of time passed between frames
 global.toggleGUI = true;			//Allows GUI to draw
+global.gamePaused = false;			//Forces all actors and instances to freeze
 global.forceSpawn = false;
 
 global.numEnemies = 0;
 
+prevPauseState = global.gamePaused;
+
 #endregion
+
 
 #region Initialize window and camera
 initWindow();

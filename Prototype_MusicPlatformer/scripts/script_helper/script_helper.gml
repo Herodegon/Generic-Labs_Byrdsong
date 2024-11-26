@@ -53,7 +53,9 @@ function spawnProjPattern(obj,state,pattInfo,stats,isDirDependant=false)
 	if (minAngle < 0) {minAngle = 360+minAngle;}	//Arithmetic doesn't work if minAngle < 0
 	
 	var objDir = 0;
-	if (isDirDependant) {objDir = 360-(obj.moveDir*-45);}
+	//If pattern is dependent on direction from player, add the angle of object 
+	//from player to the spawn algorithm
+	if (isDirDependant) {objDir = 360-(obj.moveDir*-45);}		
 	for (var i = 0; i < numNotes; i++)
 	{
 		spawnPhraseNote(obj,state,objDir+minAngle+(i*angle),radius,stats);

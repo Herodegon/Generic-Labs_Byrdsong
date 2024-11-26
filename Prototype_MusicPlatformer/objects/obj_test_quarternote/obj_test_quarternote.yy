@@ -37,5 +37,5 @@
     "path":"sprites/spr_quarternote/spr_quarternote.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

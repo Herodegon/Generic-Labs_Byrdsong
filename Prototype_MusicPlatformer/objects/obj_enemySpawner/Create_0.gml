@@ -32,18 +32,18 @@ spawnEnemies = function(num,obj,spr)
 			{
 				case SpawnWall.LEFT:		//Left Wall
 					obj_x = camera.cam_x;
-					obj_y = round(random_range(camera.cam_y,camera.cam_y+camera.cam_h))-padding;
+					obj_y = irandom_range(camera.cam_y,camera.cam_y+camera.cam_h)-padding;
 					break;
 				case SpawnWall.RIGHT:		//Right Wall
 					obj_x = camera.cam_x+camera.cam_w;
-					obj_y = round(random_range(camera.cam_y,camera.cam_y+camera.cam_h))+padding;
+					obj_y = irandom_range(camera.cam_y,camera.cam_y+camera.cam_h)+padding;
 					break;
 				case SpawnWall.TOP:			//Top Wall
-					obj_x = round(random_range(camera.cam_x,camera.cam_x+camera.cam_w))-padding;
+					obj_x = irandom_range(camera.cam_x,camera.cam_x+camera.cam_w)-padding;
 					obj_y = camera.cam_y;
 					break;
 				case SpawnWall.BOTTOM:		//Bottom Wall
-					obj_x = round(random_range(camera.cam_x,camera.cam_x+camera.cam_w))+padding;
+					obj_x = irandom_range(camera.cam_x,camera.cam_x+camera.cam_w)+padding;
 					obj_y = camera.cam_y+camera.cam_h;
 					break;
 			}
@@ -66,7 +66,7 @@ maxBudget = 8;
 waveTimer = 5*MILLISECONDS;		//Time in milliseconds
 currTimer = waveTimer;
 
-canSpawn = false;
+canSpawn = true;
 
 #region Developer Options
 spawnWallState = SpawnWall.NONE;

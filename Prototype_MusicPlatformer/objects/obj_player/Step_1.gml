@@ -126,7 +126,6 @@ if (noteDir != NOTE_DIRECTION.NONE && canAttack)
 			if (array_length(inputQueue) == 5) {inputQueue = [];}
 			if (noteDir != array_last(inputQueue)) 
 			{
-				//show_debug_message("Dir: {0}", noteDir);
 				array_push(inputQueue,noteDir);
 				inputTimer = inputWindow;
 			}
@@ -216,3 +215,5 @@ if(instance_exists(obj_soundMachine)) {
 	
 	#endregion
 }
+
+#endregion

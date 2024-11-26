@@ -46,7 +46,7 @@ image_speed = 0;
 #region Stat/Movement Variables
 max_hp = 100;			//HP set on game start
 hp = max_hp;
-max_xp = 10;			//XP needed to level up
+max_xp = 8;			//XP needed to level up
 xp = 0;
 level = 0;				//Number of levels gained
 itemPullRange = sprite_get_width(sprite_index)*2;
@@ -67,7 +67,7 @@ inputTimer = 0;
 #endregion
 
 #region Attack Variables
-availablePhrases = [obj_game.poolPhrases[0],obj_game.poolPhrases[1],obj_game.poolPhrases[2]];	// Array of struct "Phrase"
+availablePhrases = [];	// Array of struct "Phrase"
 currPhrase = noone;				// Selected phrase based on inputs
 prevDir = noone;				// Used to verify note input
 inputQueue = [];				// Array of enum "Note_Direction"

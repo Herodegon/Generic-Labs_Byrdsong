@@ -16,6 +16,11 @@ if (keyboard_check_pressed(ord("G")))
 	global.toggleGUI = !global.toggleGUI;
 }
 
+if (keyboard_check_pressed(vk_subtract))
+{
+	obj_player.xp++;
+}
+
 if (keyboard_check_pressed(vk_right))
 {
 	obj_enemySpawner.spawnWallState = SpawnWall.RIGHT;

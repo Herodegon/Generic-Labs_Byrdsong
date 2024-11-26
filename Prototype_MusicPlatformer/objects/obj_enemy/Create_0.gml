@@ -21,4 +21,6 @@ moveVector_y = 0;
 
 currState = States.CHASE;
 
+canMove = true;
+
 #endregion

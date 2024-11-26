@@ -6,7 +6,7 @@ var camera = getCameraFeatures();
 var spacing_width = camera.cam_w/5;
 var spacing_height = camera.cam_h/8;
 
-if (instance_exists(obj_player))
+if (instance_exists(obj_player) && array_length(phraseSelect) != 0)
 {
 	if (obj_player.canLevelUp)
 	{
@@ -16,7 +16,7 @@ if (instance_exists(obj_player))
 			var rect_y1 = camera.cam_y + spacing_height;
 			var rect_x2 = rect_x1 + (spacing_width);
 			var rect_y2 = rect_y1 + (spacing_height*6);
-			obj_game.DrawPhraseSelect(rect_x1,rect_y1,rect_x2,rect_y2,noone);
+			drawPhraseSelect(rect_x1,rect_y1,rect_x2,rect_y2,phraseSelect[i-1]);
 		}
 	}
 }
