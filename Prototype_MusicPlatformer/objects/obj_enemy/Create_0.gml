@@ -12,7 +12,7 @@ enum States {
 }
 
 hp = 1;			//Number of hits before enemy is destroyed
-damage = 1;		//Damage enemy deals
+damage = 1;		//Damage enemy deals 
 
 moveSpeed = 1;
 moveSpeed_diag = 0.5;
@@ -21,4 +21,8 @@ moveVector_y = 0;
 
 currState = States.CHASE;
 
+#endregion
+
+#region Handling Sound Machine
+global.numEnemyMusicPoints += musicPointValue;
 #endregion

@@ -22,6 +22,11 @@ function initPhraseStore()
 	instance_create_layer(0,0,"Instances",obj_phraseStore);
 };
 
+function initSoundMachine() 
+{
+	instance_create_layer(0,0, "Instances", obj_soundMachine);
+};
+
 function moveMap(objMove_x,objMove_y)
 {
 	var layer_background = layer_get_id("Background");
