@@ -38,7 +38,7 @@ if(not (targetEnemyPoints == currentEnemyPoints)){
 #region Handling Enemies on Screen
 // Intensity sounds that are playing should have their noise volume based off of currentEnemyPoints
 // This way it automatically adjusts as currentEnemyPoints adjusts.
-var enemySoundAdjust = .1 //Controls how much an enemyMusicPoint adjusts the sound
+var enemySoundAdjust = .1 //Controls how much an enemyMusicPoint adjusts the total sound value
 
 
 if(currentEnemyPoints > 0) {
