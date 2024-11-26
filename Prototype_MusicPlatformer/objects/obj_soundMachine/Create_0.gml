@@ -24,3 +24,5 @@ currentEnemyPoints = 0;
 totalIntensity1 = intensityLevel1;
 totalIntensity2 = totalIntensity1 + intensityLevel2;
 totalIntensity3 = totalIntensity2 + intensityLevel3;
+enemyPointAdjust = .5;
+singingPointAdjust = .01;

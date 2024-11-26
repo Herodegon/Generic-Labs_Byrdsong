@@ -161,6 +161,12 @@ if (inputTimer > 0)
 
 #region Adaptive Music
 if(instance_exists(obj_soundMachine)) {
+	
+	#region Nearby Enemy Calculations
+	// Todo, detect how many points worht of enemies are nearby and feed that to the sound machine
+	obj_soundMachine.targetEnemyPoints = global.numEnemyMusicPoints;
+	#endregion
+	
 	#region Music movement calculations
 	if(keyboard_check(Controls.move_right) or keyboard_check(Controls.move_left) or keyboard_check(Controls.move_up) or keyboard_check(Controls.move_down)) {
 		// Add a number to walkingLoudness such that it takes 3 seconds to get to full volume
@@ -177,12 +183,12 @@ if(instance_exists(obj_soundMachine)) {
 	#region Music attack calculations
 	if(keyboard_check(Controls.note_right) or keyboard_check(Controls.note_left) or keyboard_check(Controls.note_up) or keyboard_check(Controls.note_down)) {
 		// Add a number to singingLoudness such that it takes 3 seconds to get to full volume
-		obj_soundMachine.singingPoints += (1 / fps) / 3; 
-		obj_soundMachine.singingPoints= min(obj_soundMachine.singingPoints, 1); // Cap singing loudness at 1
+		obj_soundMachine.targetSingingPoints += (1 / fps) / 3; 
+		obj_soundMachine.targetSingingPoints = min(obj_soundMachine.targetSingingPoints , 1); // Cap singing loudness at 1
 	}else {
 		// Subtract a number to singingLoudness such that it take 1 second to get to min volume
-		obj_soundMachine.singingPoints -= (1 / fps) / 5;
-		obj_soundMachine.singingPoints = max(obj_soundMachine.singingPoints, 0);// Cap singing loudness at 0
+		obj_soundMachine.targetSingingPoints  -= (1 / fps) / 5;
+		obj_soundMachine.targetSingingPoints  = max(obj_soundMachine.targetSingingPoints , 0);// Cap singing loudness at 0
 	}
 	
 	#endregion
