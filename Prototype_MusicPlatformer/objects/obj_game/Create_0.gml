@@ -6,6 +6,13 @@
 #macro MILLISECONDS 1000		//1 second = 1000 milliseconds
 #macro MICROSECONDS 1000000		//1 second = 1000000 microseconds
 
+#macro DEPTH_GUI_OBJECTS -11
+#macro DEPTH_GUI -10
+#macro DEPTH_PLAYER 0
+#macro DEPTH_PROJECTILE 1
+#macro DEPTH_ENEMY 2
+#macro DEPTH_PICKUPS 10
+
 #region Initialize main game variables
 //These are variables used or tracked by the game's larger systems
 global.windowScale = 10;
@@ -13,7 +20,9 @@ global.gameTimer_start = -1;
 global.gameTimer = 0;				//Time passed since player spawned
 global.deltaTime = 0;				//Amount of time passed between frames
 global.toggleGUI = true;			//Allows GUI to draw
+global.canPause = true;
 global.gamePaused = false;			//Forces all actors and instances to freeze
+global.displayPaused = false;
 global.forceSpawn = false;
 
 global.numEnemies = 0;

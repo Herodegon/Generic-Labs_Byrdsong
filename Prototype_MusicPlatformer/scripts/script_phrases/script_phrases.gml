@@ -40,7 +40,10 @@ poolPhrases = [
 	//QuarterNote: 
 	{
 			name: "Quarter Note",
+			desc: "A mass of notes fired in a single direction.",
 			noteType: NOTE_TYPE.SINGLENOTE,
+			maxLevel: 10,
+			currLevel: 1,
 			upgrade: noone,
 			object: obj_test_quarternote,
 			sprite: noone,
@@ -52,7 +55,10 @@ poolPhrases = [
 	//Bass:
 	{
 		name: "Bass",
+		desc: "A piercing shotgun-like spread of notes.",
 		noteType: NOTE_TYPE.WAVENOTE,
+		maxLevel: 10,
+		currLevel: 1,
 		upgrade: noone,
 		object: obj_test_wave,
 		sprite: noone,
@@ -64,7 +70,10 @@ poolPhrases = [
 	//Opera:
 	{
 		name: "Opera",
+		desc: "An AOE shield of notes surrounds Byrd. They have a lot of health, but be careful: they don't last long!",
 		noteType: NOTE_TYPE.ECHONOTE,
+		maxLevel: 10,
+		currLevel: 1,
 		upgrade: noone,
 		object: obj_test_opera,
 		sprite: noone,

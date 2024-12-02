@@ -1,6 +1,9 @@
 /// @description Initialize store
 // You can write your code in this editor
 
-depth = -10;
+depth = DEPTH_GUI;
 
+
+colorValue = 0;
 phraseSelect = [];
+currSelect = noone;

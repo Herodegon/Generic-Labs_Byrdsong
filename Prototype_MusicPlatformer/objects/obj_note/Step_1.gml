@@ -59,6 +59,10 @@ if (hp <= 0)
 #region Timer
 if (isDespawnSet)
 {
+	if (despawnTimer < 0.25*MILLISECONDS)
+	{
+		image_alpha = (despawnTimer*4)/MILLISECONDS
+	}
 	despawnTimer -= global.deltaTime;
 	if (despawnTimer <= 0) {instance_destroy();}
 }

@@ -2,7 +2,9 @@
 // You can write your code in this editor
 
 #region Sprite variables
+depth = DEPTH_PROJECTILE;
 image_speed = 0;
+image_alpha = 1;
 
 #endregion
 
@@ -30,7 +32,7 @@ moveSpeed = obj_player.moveSpeed + 1;
 moveSpeed_diag = obj_player.moveSpeed_diag + 1;
 moveVector_x = 0;
 moveVector_y = 0;
-moveDir = noone;
+moveDir = noone;			//When projectile direction is different than movement direction
 
 moveState = NOTE_MOVEMENT.STRAIGHT;
 
@@ -42,6 +44,8 @@ isPlayerLocked = true;		//Movement locked to player's position
 canMove = true;				//Will move each frame
 canSpawn = false;			//Is able to spawn projectiles
 isInvincible = false;		//Object does not die
+
+isGuiObject	= false;
 
 #endregion
 

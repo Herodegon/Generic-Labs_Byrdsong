@@ -15,12 +15,20 @@ if (instance_exists(obj_player) && !global.gamePaused)
 
 #endregion
 
+if (keyboard_check_pressed(vk_escape) && global.canPause)
+{
+	global.gamePaused = !global.gamePaused;
+	global.displayPaused = !global.displayPaused;
+	global.toggleGUI = !global.toggleGUI;
+}
+
 #region Game State
 if (prevPauseState != global.gamePaused)
 {
 	with (obj_player)
 	{
 		canMove = !canMove;
+		canAttack = !canAttack;
 	}
 	
 	with (obj_note)

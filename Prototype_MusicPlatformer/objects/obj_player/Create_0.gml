@@ -35,7 +35,7 @@ Controls =
 #endregion
 
 #region Sprite Initialization
-depth = 0;
+depth = DEPTH_PLAYER;
 image_index = 0;
 image_speed = 0;
 
@@ -71,6 +71,7 @@ availablePhrases = [];	// Array of struct "Phrase"
 currPhrase = noone;				// Selected phrase based on inputs
 prevDir = noone;				// Used to verify note input
 inputQueue = [];				// Array of enum "Note_Direction"
+inputQueue_size = 0;			// Number of sprites in queue
 
 #endregion
 

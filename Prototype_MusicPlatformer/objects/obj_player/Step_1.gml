@@ -123,10 +123,16 @@ if (noteDir != NOTE_DIRECTION.NONE && canAttack)
 	{
 		if (!currPhrase)
 		{
-			if (array_length(inputQueue) == 5) {inputQueue = [];}
+			if (array_length(inputQueue) == 6) 
+			{
+				inputQueue = [];
+				inputQueue_size = 0;
+			}
 			if (noteDir != array_last(inputQueue)) 
 			{
 				array_push(inputQueue,noteDir);
+				if(noteDir%2 == 1) {inputQueue_size += 3;}
+				else {inputQueue_size++;}
 				inputTimer = inputWindow;
 			}
 			currPhrase = getPhrase(availablePhrases,inputQueue);
@@ -143,6 +149,7 @@ if (noteDir != NOTE_DIRECTION.NONE && canAttack)
 				//show_debug_message("Select currPhrase / Dir: {0}", noteDir);
 				noteStruct = currPhrase;
 				inputQueue = [];
+				inputQueue_size = 0;
 				currPhrase = noone;
 				prevDir = noone;
 			}
@@ -182,7 +189,11 @@ if (attackTimer > 0)
 if (inputTimer > 0)
 {
 	inputTimer -= global.deltaTime;	
-	if (inputTimer <= 0) {inputQueue = [];}
+	if (inputTimer <= 0) 
+	{
+		inputQueue = [];
+		inputQueue_size = 0;
+	}
 }
 
 #endregion

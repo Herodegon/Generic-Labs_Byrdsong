@@ -5,7 +5,7 @@
 
 var camera = getCameraFeatures();
 
-#region Player HP and EXP
+#region Player HP, EXP, and notes queued
 if (instance_exists(obj_player) && global.toggleGUI)
 {
 	with (obj_player)
@@ -21,7 +21,26 @@ if (instance_exists(obj_player) && global.toggleGUI)
 		{
 			drawProgressBar(x,y+barOffset,spriteWidth,max_xp,xp,c_aqua);
 		}
+		
+		if (inputQueue_size > 0)
+		{
+			var spriteWidth_input = sprite_get_width(spr_right);
+			var comboX = x-((spriteWidth/2)*inputQueue_size);
+			var comboY = y-(spriteWidth/2)-spriteWidth_input;
+			drawInputCombo(comboX,comboY,inputQueue,false);
+		}
 	}
+}
+
+#endregion
+
+#region Pause Screen
+if (global.gamePaused && global.displayPaused)
+{	
+	draw_set_font(fnt_titleText);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_center);
+	draw_text(camera.cam_centerX,camera.cam_centerY,"Game Paused");
 }
 
 #endregion

@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 #region Sprite Initialization
-depth = 2;
+depth = DEPTH_ENEMY;
 
 #endregion
 
