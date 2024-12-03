@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 currTimer -= global.deltaTime;
+currBudgetTimer -= global.deltaTime;
 if ((currTimer <= 0 && canSpawn) || global.forceSpawn)
 {
 	var currBudget = maxBudget;
@@ -22,4 +23,12 @@ if ((currTimer <= 0 && canSpawn) || global.forceSpawn)
 	currTimer = waveTimer;
 }
 
-show_debug_message("Num Enemies: {0}",global.numEnemies);
+#region Check timer to increase max budget
+if (currBudgetTimer <= 0)
+{
+	maxBudget = round(maxBudget*budgetIncreaseMult);
+	currBudgetTimer = maxBudgetTimer;
+}
+
+#endregion
+	

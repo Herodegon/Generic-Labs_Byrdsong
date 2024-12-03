@@ -27,7 +27,8 @@ basicNote =
 {
 	name: "Note",							
 	noteType: NOTE_TYPE.SINGLENOTE,	
-	upgrade: noone,
+	maxLevel: 10,
+	currLevel: 1,
 	object: obj_note,						
 	sprite: spr_eighthnote,					
 	combination: noone,						// Does not have combo input		
@@ -44,7 +45,6 @@ poolPhrases = [
 			noteType: NOTE_TYPE.SINGLENOTE,
 			maxLevel: 10,
 			currLevel: 1,
-			upgrade: noone,
 			object: obj_test_quarternote,
 			sprite: noone,
 			combination: [NOTE_DIRECTION.DOWN,
@@ -59,7 +59,6 @@ poolPhrases = [
 		noteType: NOTE_TYPE.WAVENOTE,
 		maxLevel: 10,
 		currLevel: 1,
-		upgrade: noone,
 		object: obj_test_wave,
 		sprite: noone,
 		combination: [NOTE_DIRECTION.LEFT,
@@ -74,7 +73,6 @@ poolPhrases = [
 		noteType: NOTE_TYPE.ECHONOTE,
 		maxLevel: 10,
 		currLevel: 1,
-		upgrade: noone,
 		object: obj_test_opera,
 		sprite: noone,
 		combination: [NOTE_DIRECTION.UP,

@@ -27,6 +27,8 @@ global.forceSpawn = false;
 
 global.numEnemies = 0;
 
+global.devCommandsActive = false;
+
 prevPauseState = global.gamePaused;
 
 #endregion

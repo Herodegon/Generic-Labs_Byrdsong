@@ -17,6 +17,8 @@ stats =
 	knockback: 0
 }
 hp = stats.max_hp;
+level = 1;
+canLevelUp = false;
 
 patternInfo =
 {

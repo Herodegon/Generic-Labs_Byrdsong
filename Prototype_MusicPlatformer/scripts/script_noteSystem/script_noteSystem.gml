@@ -177,4 +177,52 @@ function fireNote(struct,dir)
 	noteObj.moveVector_x = noteVector_x;
 	noteObj.moveVector_y = noteVector_y;
 	noteObj.moveDir = dir;
+	
+	noteObj.level = struct.currLevel;
+	if (noteObj.level > 1) {noteObj.canLevelUp = true;}
+};
+
+function spawnPhraseNote(obj,moveState,angle,radius,stats)
+{
+	var pos_x = obj.x + (radius*dcos(angle));
+	var pos_y = obj.y + (radius*dsin(angle));
+	var objNote = instance_create_layer(pos_x,pos_y,"Instances",obj_phraseNote);
+	objNote.moveState = moveState;
+	objNote.objTether = obj;
+	objNote.radius = radius;
+	objNote.angle = angle;
+	
+	objNote.stats = stats;
+	objNote.hp = stats.max_hp;
+};
+
+function spawnProjPattern(obj,state,pattInfo,stats,isDirDependant=false)
+{
+	#region Simplify patternInfo paths
+	var maxAngle = pattInfo.maxAngle;
+	var minAngle = pattInfo.minAngle;
+	var numNotes = pattInfo.numNotes;
+	var radius = pattInfo.radius;
+	
+	#endregion
+	
+	var angle = 0;
+	if (maxAngle-minAngle != 360)
+	{
+		angle = (maxAngle-minAngle)/(numNotes-1);
+	}
+	else
+	{
+		angle = (maxAngle-minAngle)/numNotes;
+	}
+	if (minAngle < 0) {minAngle = 360+minAngle;}	//Arithmetic doesn't work if minAngle < 0
+	
+	var objDir = 0;
+	//If pattern is dependent on direction from player, add the angle of object 
+	//from player to the spawn algorithm
+	if (isDirDependant) {objDir = 360-(obj.moveDir*-45);}		
+	for (var i = 0; i < numNotes; i++)
+	{
+		spawnPhraseNote(obj,state,objDir+minAngle+(i*angle),radius,stats);
+	}
 };

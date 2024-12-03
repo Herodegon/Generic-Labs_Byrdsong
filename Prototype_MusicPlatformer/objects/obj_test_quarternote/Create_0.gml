@@ -26,15 +26,3 @@ despawnTimer *= 2;
 isPlayerLocked = false;
 canSpawn = true;
 isInvincible = true;
-
-/*
-var numNotes = 4;
-var angle = 360/numNotes;
-var spriteWidth = sprite_get_width(spr_eighthnote);
-for (var i = 0; i < numNotes; i++)
-{
-	spawnPhraseNote(id,NOTE_MOVEMENT.CIRCULAR,i*angle,spriteWidth,stats);
-}
-*/
-
-//spawnProjPattern(id,projState,patternInfo,stats,true);

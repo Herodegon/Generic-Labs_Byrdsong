@@ -27,7 +27,6 @@ spawnEnemies = function(num,obj,spr)
 		// specific direction
 		if (spawnWallState != noone)
 		{
-			show_debug_message("Spawn Wall is not none");
 			switch(spawnWallState)
 			{
 				case SpawnWall.LEFT:		//Left Wall
@@ -65,6 +64,10 @@ poolEnemies = [
 maxBudget = 8;
 waveTimer = 5*MILLISECONDS;		//Time in milliseconds
 currTimer = waveTimer;
+
+maxBudgetTimer = 15*MILLISECONDS;
+currBudgetTimer = maxBudgetTimer;
+budgetIncreaseMult = 1.1;
 
 canSpawn = true;
 
