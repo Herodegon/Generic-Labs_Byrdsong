@@ -22,6 +22,11 @@ if (global.devCommandsActive)
 	{
 		obj_player.xp++;
 	}
+	
+	if (keyboard_check_pressed(ord("L")))
+	{
+		obj_player.canLevelUp = true;
+	}
 
 	if (keyboard_check_pressed(vk_right))
 	{

@@ -48,6 +48,7 @@ canSpawn = false;			//Is able to spawn projectiles
 isInvincible = false;		//Object does not die
 
 isGuiObject	= false;
+isPaused = false;
 
 #endregion
 

@@ -57,13 +57,16 @@ with (obj_xp)
 #endregion
 
 #region Check enemy collision
-with (obj_enemy)
+if (!isPaused)
 {
-	if (instance_place(x,y,other))
+	with (obj_enemy)
 	{
-		if (other.hp > 0)
+		if (instance_place(x,y,other))
 		{
-			other.hp -= damage;
+			if (other.hp > 0)
+			{
+				other.hp -= damage;
+			}
 		}
 	}
 }
@@ -76,7 +79,7 @@ if (hp < 0)
 #endregion
 
 #region Health Check
-if (hp <= 0 && !isInvincible)
+if (hp <= 0 && !isInvincible && !isPaused)
 {
 	sprite_index = spr_player_dead;
 	image_speed = 0.2;
@@ -87,7 +90,7 @@ if (hp <= 0 && !isInvincible)
 #endregion
 
 #region Level Up Check
-if (xp >= max_xp)
+if (xp >= max_xp && !isPaused)
 {
 	hp = max_hp;
 	xp = xp % max_xp;
@@ -99,7 +102,7 @@ if (xp >= max_xp)
 
 #region Attack System
 #region Check for state change
-if (keyboard_check_pressed(Controls.toggle_phraseMode))
+if (keyboard_check_pressed(Controls.toggle_phraseMode) && !isPaused)
 {
 	phraseMode = !phraseMode;
 }
@@ -180,20 +183,22 @@ else if (currPhrase && noteDir == NOTE_DIRECTION.NONE)		// Wait for player to st
 #endregion
 
 #region Timers
-show_debug_message("Attack Timer: {0}",attackTimer);
-if (attackTimer > 0)
+if (!isPaused)
 {
-	attackTimer -= global.deltaTime;
-	if (attackTimer <= 0) {canAttack = true;}
-}
-
-if (inputTimer > 0)
-{
-	inputTimer -= global.deltaTime;	
-	if (inputTimer <= 0) 
+	if (attackTimer > 0)
 	{
-		inputQueue = [];
-		inputQueue_size = 0;
+		attackTimer -= global.deltaTime;
+		if (attackTimer <= 0) {canAttack = true;}
+	}
+
+	if (inputTimer > 0)
+	{
+		inputTimer -= global.deltaTime;	
+		if (inputTimer <= 0) 
+		{
+			inputQueue = [];
+			inputQueue_size = 0;
+		}
 	}
 }
 

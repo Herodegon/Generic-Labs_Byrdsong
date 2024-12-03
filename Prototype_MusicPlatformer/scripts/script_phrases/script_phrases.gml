@@ -10,14 +10,16 @@
 #region Phrase Template
 phraseExample = 
 {
-	name: "Quarter Note",					// Name of Special Move 
-	noteType: NOTE_TYPE.SINGLENOTE,			// Type of Move
-	upgrade: noone,							// Pointer to the upgraded version of this phrase
-	object: obj_quarternote,				// Move Object
-	sprite: spr_quarternote,				// Move Sprite
-	combination: [NOTE_DIRECTION.DOWN,		// Inputs to Trigger Move
-				  NOTE_DIRECTION.DOWNRIGHT,
-				  NOTE_DIRECTION.RIGHT]
+	name: "Quarter Note",										//Name of the phrase
+	desc: "A mass of notes fired in a single direction.",		//Description 
+	noteType: NOTE_TYPE.SINGLENOTE,
+	maxLevel: 10,
+	currLevel: 1,
+	object: obj_test_quarternote,
+	sprite: noone,
+	combination: [NOTE_DIRECTION.DOWN,
+					NOTE_DIRECTION.DOWNRIGHT,
+					NOTE_DIRECTION.RIGHT]
 }
 
 #endregion

@@ -1,6 +1,11 @@
 /// @description Handle note movement
 // You can write your code in this editor
 
+#region Check for GUI object
+if (isPaused && isGuiObject) {isPaused = false;}
+
+#endregion
+
 #region Spawn Projectiles
 if (canSpawn)
 {
@@ -11,7 +16,7 @@ if (canSpawn)
 #endregion
 
 #region Movement
-if (canMove && moveState == NOTE_MOVEMENT.STRAIGHT)
+if (canMove && moveState == NOTE_MOVEMENT.STRAIGHT && !isPaused)
 {
 	var objSpeed = moveSpeed;
 	if (moveVector_x != 0 && moveVector_y != 0) 
@@ -28,7 +33,7 @@ if (canMove && moveState == NOTE_MOVEMENT.STRAIGHT)
 #endregion
 
 #region Collision
-if (!isInvincible)
+if (!isInvincible && !isPaused)
 {
 	with (obj_enemy)
 	{
@@ -57,14 +62,17 @@ if (hp <= 0)
 #endregion
 
 #region Timer
-if (isDespawnSet)
+if (!isPaused)
 {
-	if (despawnTimer < 0.25*MILLISECONDS)
+	if (isDespawnSet)
 	{
-		image_alpha = (despawnTimer*4)/MILLISECONDS
+		if (despawnTimer < 0.25*MILLISECONDS)
+		{
+			image_alpha = (despawnTimer*4)/MILLISECONDS
+		}
+		despawnTimer -= global.deltaTime;
+		if (despawnTimer <= 0) {instance_destroy();}
 	}
-	despawnTimer -= global.deltaTime;
-	if (despawnTimer <= 0) {instance_destroy();}
 }
 
 #endregion

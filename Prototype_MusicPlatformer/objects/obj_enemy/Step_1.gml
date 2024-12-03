@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 #region Chase player
-if (canMove)
+if (canMove && !isPaused)
 {
 	if (currState == States.CHASE)
 	{	

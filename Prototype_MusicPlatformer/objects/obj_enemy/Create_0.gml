@@ -23,4 +23,6 @@ currState = States.CHASE;
 
 canMove = true;
 
+isPaused = false;
+
 #endregion

@@ -38,6 +38,7 @@ if (instance_exists(obj_player) && global.toggleGUI)
 if (global.gamePaused && global.displayPaused)
 {	
 	draw_set_font(fnt_titleText);
+	draw_set_color(c_black);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
 	draw_text(camera.cam_centerX,camera.cam_centerY,"Game Paused");

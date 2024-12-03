@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"spr_enemy",
-    "path":"folders/Sprites/spr_enemy.yy",
+    "name":"Raccoon",
+    "path":"folders/Sprites/spr_enemy/Raccoon.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

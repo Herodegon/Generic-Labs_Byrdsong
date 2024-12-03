@@ -70,6 +70,7 @@ currBudgetTimer = maxBudgetTimer;
 budgetIncreaseMult = 1.1;
 
 canSpawn = true;
+isPaused = false;
 
 #region Developer Options
 spawnWallState = SpawnWall.NONE;
