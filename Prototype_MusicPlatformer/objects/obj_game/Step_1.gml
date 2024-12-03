@@ -27,8 +27,7 @@ if (prevPauseState != global.gamePaused)
 {
 	with (obj_player)
 	{
-		canMove = !canMove;
-		canAttack = !canAttack;
+		isPaused = !isPaused;
 	}
 	
 	with (obj_note)

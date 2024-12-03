@@ -3,7 +3,7 @@
 
 #region Movement
 
-if (canMove)
+if (canMove && !isPaused)
 {
 	#region Speed Calculation
 	moveVector_x = (keyboard_check(Controls.move_right)-keyboard_check(Controls.move_left));
@@ -107,7 +107,7 @@ if (keyboard_check_pressed(Controls.toggle_phraseMode))
 #endregion
 
 var noteDir = getNoteDirection(Controls);
-if (noteDir != NOTE_DIRECTION.NONE && canAttack)
+if (noteDir != NOTE_DIRECTION.NONE && canAttack && !isPaused)
 {
 	var noteStruct = noone;
 	#region Basic Notes
@@ -180,6 +180,7 @@ else if (currPhrase && noteDir == NOTE_DIRECTION.NONE)		// Wait for player to st
 #endregion
 
 #region Timers
+show_debug_message("Attack Timer: {0}",attackTimer);
 if (attackTimer > 0)
 {
 	attackTimer -= global.deltaTime;

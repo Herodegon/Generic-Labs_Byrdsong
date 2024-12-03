@@ -78,6 +78,7 @@ inputQueue_size = 0;			// Number of sprites in queue
 #endregion
 
 #region Gameplay Flags
+isPaused = false;
 canAttack = true;
 canMove = true;
 canLevelUp = false;

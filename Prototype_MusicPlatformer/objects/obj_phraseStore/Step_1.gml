@@ -46,7 +46,7 @@ if (instance_exists(obj_player))
 			
 			phraseSelect[currSelect].isSelected = true;
 		}
-		else if (keyboard_check_pressed(ord("W")))
+		else if (keyboard_check_pressed(ord("W")) && currSelect != noone)
 		{
 			var chosenPhrase = variable_clone(phraseSelect[currSelect].phrase);
 			for (var i = 0; i < array_length(obj_player.availablePhrases); i++)
