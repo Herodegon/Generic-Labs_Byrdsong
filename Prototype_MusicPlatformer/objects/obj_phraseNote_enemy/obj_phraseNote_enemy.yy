@@ -1,20 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_test_opera",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_phraseNote_enemy",
+  "eventList":[],
   "managed":true,
-  "name":"obj_test_opera",
+  "name":"obj_phraseNote_enemy",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player Projectiles",
-    "path":"folders/Objects/Note Types/Player Projectiles.yy",
+    "name":"Enemy Projectiles",
+    "path":"folders/Objects/Note Types/Enemy Projectiles.yy",
   },
   "parentObjectId":{
-    "name":"obj_note",
-    "path":"objects/obj_note/obj_note.yy",
+    "name":"obj_phraseNote",
+    "path":"objects/obj_phraseNote/obj_phraseNote.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -35,5 +32,5 @@
   "solid":false,
   "spriteId":null,
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

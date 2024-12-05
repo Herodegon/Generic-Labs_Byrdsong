@@ -37,6 +37,7 @@ moveVector_y = 0;
 moveDir = noone;			//When projectile direction is different than movement direction
 
 moveState = NOTE_MOVEMENT.STRAIGHT;
+collisionObject = obj_enemy;
 
 despawnTimer = obj_player.attackDelay*2;
 

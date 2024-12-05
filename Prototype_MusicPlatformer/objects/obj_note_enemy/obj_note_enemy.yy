@@ -1,16 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_test_opera",
+  "%Name":"obj_note_enemy",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_test_opera",
+  "name":"obj_note_enemy",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player Projectiles",
-    "path":"folders/Objects/Note Types/Player Projectiles.yy",
+    "name":"Enemy Projectiles",
+    "path":"folders/Objects/Note Types/Enemy Projectiles.yy",
   },
   "parentObjectId":{
     "name":"obj_note",
@@ -35,5 +34,5 @@
   "solid":false,
   "spriteId":null,
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

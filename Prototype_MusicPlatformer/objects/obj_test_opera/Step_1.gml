@@ -4,10 +4,10 @@
 #region Handle Levels
 if (canLevelUp)
 {
-	patternInfo.numNotes += (level-1)*2;
+	patternInfo.numNotes += (level-1);
 	if (level%3 == 0)
 	{
-		patternInfo.radius += (level/3)*2;
+		moveSpeed += 0.5;
 	}
 	canLevelUp = false;
 }

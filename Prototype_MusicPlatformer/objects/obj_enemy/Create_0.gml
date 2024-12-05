@@ -7,10 +7,6 @@ depth = DEPTH_ENEMY;
 #endregion
 
 #region Enemy Variables
-enum States {
-	CHASE
-}
-
 hp = 1;			//Number of hits before enemy is destroyed
 damage = 1;		//Damage enemy deals
 
@@ -19,7 +15,7 @@ moveSpeed_diag = 0.5;
 moveVector_x = 0;
 moveVector_y = 0;
 
-currState = States.CHASE;
+currState = ENEMY_STATES.CHASE;
 
 canMove = true;
 

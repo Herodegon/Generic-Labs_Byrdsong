@@ -1,20 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_test_opera",
+  "%Name":"obj_snake",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_test_opera",
+  "name":"obj_snake",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player Projectiles",
-    "path":"folders/Objects/Note Types/Player Projectiles.yy",
+    "name":"Enemy Types",
+    "path":"folders/Objects/Enemy Types.yy",
   },
   "parentObjectId":{
-    "name":"obj_note",
-    "path":"objects/obj_note/obj_note.yy",
+    "name":"obj_enemy",
+    "path":"objects/obj_enemy/obj_enemy.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_spitter_down",
+    "path":"sprites/spr_spitter_down/spr_spitter_down.yy",
+  },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }
