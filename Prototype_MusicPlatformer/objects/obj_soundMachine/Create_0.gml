@@ -24,5 +24,5 @@ currentEnemyPoints = 0;
 totalIntensity1 = intensityLevel1;
 totalIntensity2 = totalIntensity1 + intensityLevel2;
 totalIntensity3 = totalIntensity2 + intensityLevel3;
-enemyPointAdjust = .35; // Controls how many points the currentEnemyPoints can adjust to the targetEnemyPoints
+enemyPointAdjust = .05; // Controls how many points the currentEnemyPoints can adjust to the targetEnemyPoints
 singingPointAdjust = .01;

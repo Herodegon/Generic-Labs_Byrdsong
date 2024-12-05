@@ -164,7 +164,16 @@ if(instance_exists(obj_soundMachine)) {
 	
 	#region Nearby Enemy Calculations
 	// Todo, detect how many points worht of enemies are nearby and feed that to the sound machine
-	obj_soundMachine.targetEnemyPoints = global.numEnemyMusicPoints;
+	var nearbyEnemyMusicPoints = 0;
+	var totalEnemes = global.numEnemies;
+	// if(point_distance(obj_player.x, obj_player.y, obj_enemy.x, obj_enemy.y) < 150) {
+	for(var i = 0; i < totalEnemes; i++) {
+		var currentEnemy = instance_find(obj_enemy, i);
+		if(distance_to_object(currentEnemy) < 150) {
+			nearbyEnemyMusicPoints += currentEnemy.musicPointValue;
+		}
+	}
+	obj_soundMachine.targetEnemyPoints = nearbyEnemyMusicPoints;
 	#endregion
 	
 	#region Music movement calculations

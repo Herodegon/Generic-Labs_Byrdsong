@@ -23,7 +23,7 @@ if(not (targetEnemyPoints == currentEnemyPoints)){
 		if(targetEnemyPoints > currentEnemyPoints) {
 			currentEnemyPoints += enemyPointAdjust;
 		}else {
-			currentEnemyPoints -= enemyPointAdjust;
+			currentEnemyPoints -= 4 * enemyPointAdjust;
 		}
 	}
 }
@@ -67,8 +67,8 @@ if(currentEnemyPoints > 0) {
 
 #endregion
 
-
-
-
+show_debug_message("Total Enemy Music Points: {0}", global.numEnemyMusicPoints);
+show_debug_message("Target Enemy Music Points: {0}", targetEnemyPoints);
+show_debug_message("Current Enemy Music Points: {0}", currentEnemyPoints);
 
 #endregion
