@@ -89,6 +89,7 @@
     {"id":{"name":"script_phrases","path":"scripts/script_phrases/script_phrases.yy",},},
     {"id":{"name":"snd_byrdSinging","path":"sounds/snd_byrdSinging/snd_byrdSinging.yy",},},
     {"id":{"name":"snd_byrdWalking","path":"sounds/snd_byrdWalking/snd_byrdWalking.yy",},},
+    {"id":{"name":"snd_enemyDeath","path":"sounds/snd_enemyDeath/snd_enemyDeath.yy",},},
     {"id":{"name":"snd_enemyIntensity1","path":"sounds/snd_enemyIntensity1/snd_enemyIntensity1.yy",},},
     {"id":{"name":"snd_enemyIntensity2","path":"sounds/snd_enemyIntensity2/snd_enemyIntensity2.yy",},},
     {"id":{"name":"snd_enemyIntensity3","path":"sounds/snd_enemyIntensity3/snd_enemyIntensity3.yy",},},

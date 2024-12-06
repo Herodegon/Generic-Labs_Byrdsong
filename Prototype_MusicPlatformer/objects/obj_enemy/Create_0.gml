@@ -8,7 +8,7 @@ depth = DEPTH_ENEMY;
 
 #region Enemy Variables
 hp = 1;			//Number of hits before enemy is destroyed
-damage = 1;		//Damage enemy deals
+damage = 1;		//Damage enemy deals 
 
 moveSpeed = 1;
 moveSpeed_diag = 0.5;
@@ -21,4 +21,8 @@ canMove = true;
 
 isPaused = false;
 
+#endregion
+
+#region Handling Sound Machine
+global.numEnemyMusicPoints += musicPointValue;
 #endregion

@@ -3,3 +3,5 @@
 
 spawnXP(x,y);
 global.numEnemies--;
+global.numEnemyMusicPoints -= musicPointValue;
+audio_play_sound(snd_enemyDeath,1,false);
