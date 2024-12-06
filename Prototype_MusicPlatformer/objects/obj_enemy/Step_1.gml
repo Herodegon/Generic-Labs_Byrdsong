@@ -4,11 +4,11 @@
 #region Chase player
 if (canMove && !isPaused)
 {
-	if (currState == ENEMY_STATES.CHASE)
+	if (currState == States.CHASE)
 	{	
 		#region Movement and collision
 		var objSpeed = moveSpeed;
-		if (currState == ENEMY_STATES.CHASE && instance_exists(obj_player))
+		if (currState == States.CHASE && instance_exists(obj_player))
 		{
 			var delta_x = obj_player.x - x;
 			var delta_y = obj_player.y - y;
@@ -36,7 +36,7 @@ if (canMove && !isPaused)
 		#endregion
 	
 		#region Collision
-		if (currState == ENEMY_STATES.CHASE)
+		if (currState == States.CHASE)
 		{
 			if (instance_place(x+move_x,y+move_y,obj_block) || instance_place(x+move_x,y+move_y,obj_enemy))
 			{	
