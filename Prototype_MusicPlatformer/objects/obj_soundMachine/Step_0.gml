@@ -35,23 +35,33 @@ if(not (targetEnemyPoints == currentEnemyPoints)){
 // Will be the difference between enemyPoints and totalEnemyPoints
 #endregion
 
-#region Handling Enemies on Screen
+#region Handling Enemies on Screen and offscreen
 // Intensity sounds that are playing should have their noise volume based off of currentEnemyPoints
 // This way it automatically adjusts as currentEnemyPoints adjusts.
+// Enemies that are off screen should have a much quieter sound.
 var enemySoundAdjust = .1 //Controls how much an enemyMusicPoint adjusts the total sound value
 
 
 if(currentEnemyPoints > 0) {
-	audio_sound_gain(snd_enemyMelody,max(.2, min(1, currentEnemyPoints/totalIntensity1)),0)
+	if(currentEnemyPoints > 0) {
+		audio_sound_gain(snd_enemyMelody,max(.2, min(1, currentEnemyPoints/totalIntensity1)),0)
+	}else if(totalEnemyPoints > 0) {
+		audio_sound_gain(snd_enemyMelody, .05, 0);
+	}
+	
 	
 	if(currentEnemyPoints > totalIntensity1) {
 		audio_sound_gain(snd_enemyIntensity1, min(1, (currentEnemyPoints-totalIntensity1)*enemySoundAdjust),0)
+	}else if(totalEnemyPoints > totalIntensity1) {
+		audio_sound_gain(snd_enemyIntensity1, .05, 0)
 	}else {
 		audio_sound_gain(snd_enemyIntensity1, 0, 0);
 	}
 	
 	if(currentEnemyPoints > totalIntensity2) {
 		audio_sound_gain(snd_enemyIntensity2, min(1, (currentEnemyPoints-totalIntensity2)*enemySoundAdjust),0)
+	}else if(totalEnemyPoints > totalIntensity2) {
+		audio_sound_gain(snd_enemyIntensity2, .05, 0)
 	}else {
 		audio_sound_gain(snd_enemyIntensity2, 0, 0);
 	}
@@ -59,6 +69,8 @@ if(currentEnemyPoints > 0) {
 	
 	if(currentEnemyPoints > totalIntensity3) {
 		audio_sound_gain(snd_enemyIntensity3, min(1, (currentEnemyPoints-totalIntensity3)*enemySoundAdjust),0)
+	}else if(totalEnemyPoints > totalIntensity3) {
+		audio_sound_gain(snd_enemyIntensity3, .05, 0)
 	}else {
 		audio_sound_gain(snd_enemyIntensity3, 0, 0);
 	}
