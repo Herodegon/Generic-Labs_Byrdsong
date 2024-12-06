@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-var adaptiveMusic = audio_create_sync_group(true);
-var test = audio_create_sync_group(false);
+adaptiveMusic = audio_create_sync_group(true);
 
 audio_play_in_sync_group(adaptiveMusic,snd_byrdSinging);
 audio_play_in_sync_group(adaptiveMusic,snd_byrdWalking);
