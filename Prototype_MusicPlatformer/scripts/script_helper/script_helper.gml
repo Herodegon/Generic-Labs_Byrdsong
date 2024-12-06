@@ -58,7 +58,7 @@ function moveMap(objMove_x,objMove_y)
 			y -= objMove_y;
 		}
 	}
-	
+
 	if (instance_exists(obj_xp))
 	{
 		with (obj_xp)

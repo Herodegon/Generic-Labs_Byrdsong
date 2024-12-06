@@ -27,7 +27,8 @@ phraseExample =
 #region Basic Note
 basicNote = 
 {
-	name: "Note",							
+	name: "Note",	
+	desc: "A magical music note summoned by the pitch of Byrd's singing.",
 	noteType: NOTE_TYPE.SINGLENOTE,	
 	maxLevel: 10,
 	currLevel: 1,
@@ -39,7 +40,8 @@ basicNote =
 #endregion
 
 #region Phrases - Level 1
-poolPhrases = [
+poolPhrases = 
+[
 	//QuarterNote: 
 	{
 			name: "Quarter Note",
