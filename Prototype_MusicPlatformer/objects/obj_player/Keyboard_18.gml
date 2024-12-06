@@ -30,21 +30,21 @@ if (global.devCommandsActive)
 
 	if (keyboard_check_pressed(vk_right))
 	{
-		obj_enemySpawner.spawnWallState = SPAWN_WALL.RIGHT;
+		obj_enemySpawner.spawnWallState = SpawnWall.RIGHT;
 	}
 
 	if (keyboard_check_pressed(vk_left))
 	{
-		obj_enemySpawner.spawnWallState = SPAWN_WALL.LEFT;
+		obj_enemySpawner.spawnWallState = SpawnWall.LEFT;
 	}
 
 	if (keyboard_check_pressed(vk_up))
 	{
-		obj_enemySpawner.spawnWallState = SPAWN_WALL.TOP;
+		obj_enemySpawner.spawnWallState = SpawnWall.TOP;
 	}
 
 	if (keyboard_check_pressed(vk_down))
 	{
-		obj_enemySpawner.spawnWallState = SPAWN_WALL.BOTTOM;
+		obj_enemySpawner.spawnWallState = SpawnWall.BOTTOM;
 	}
 }

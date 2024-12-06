@@ -35,7 +35,7 @@ if (canMove && moveState == NOTE_MOVEMENT.STRAIGHT && !isPaused)
 #region Collision
 if (!isInvincible && !isPaused)
 {
-	with (collisionObject)
+	with (obj_enemy)
 	{
 		if (instance_place(x,y,other))
 		{
