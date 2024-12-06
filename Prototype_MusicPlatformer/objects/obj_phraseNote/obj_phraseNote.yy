@@ -9,8 +9,8 @@
   "name":"obj_phraseNote",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player Projectiles",
-    "path":"folders/Objects/Note Types/Player Projectiles.yy",
+    "name":"Note Types",
+    "path":"folders/Objects/Note Types.yy",
   },
   "parentObjectId":{
     "name":"obj_note",

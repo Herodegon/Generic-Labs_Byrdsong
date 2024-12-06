@@ -13,15 +13,17 @@ stats =
 
 patternInfo =
 {
-	numNotes: 4,
+	numNotes: 2,
 	maxAngle: 360,
 	minAngle: 0,
-	radius: 24
+	radius: 16
 }
+
+moveSpeed /= 2;
 
 projState = NOTE_MOVEMENT.CIRCULAR;
 
-despawnTimer *= 2;
+despawnTimer *= 1.5;
 
 canMove = false;
 canSpawn = true;

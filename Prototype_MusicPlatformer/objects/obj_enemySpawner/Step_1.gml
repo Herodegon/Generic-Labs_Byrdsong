@@ -5,7 +5,7 @@ if (!isPaused)
 {
 	currTimer -= global.deltaTime;
 	currBudgetTimer -= global.deltaTime;
-	if ((currTimer <= 0 && canSpawn && global.numEnemies < enemyLimit) || global.forceSpawn)
+	if ((currTimer <= 0 && canSpawn) || global.forceSpawn)
 	{
 		var currBudget = maxBudget;
 		while (currBudget > 0)
