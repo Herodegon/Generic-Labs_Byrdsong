@@ -30,8 +30,8 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"walkingLoudness","filters":[],"listItems":[],"multiselect":false,"name":"walkingLoudness","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"intensityLevel1","filters":[],"listItems":[],"multiselect":false,"name":"intensityLevel1","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"10","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"intensityLevel2","filters":[],"listItems":[],"multiselect":false,"name":"intensityLevel2","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"10","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"intensityLevel3","filters":[],"listItems":[],"multiselect":false,"name":"intensityLevel3","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"10","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"intensityLevel2","filters":[],"listItems":[],"multiselect":false,"name":"intensityLevel2","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"20","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"intensityLevel3","filters":[],"listItems":[],"multiselect":false,"name":"intensityLevel3","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"20","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"targetEnemyPoints","filters":[],"listItems":[],"multiselect":false,"name":"targetEnemyPoints","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"targetSingingPoints","filters":[],"listItems":[],"multiselect":false,"name":"targetSingingPoints","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
   ],

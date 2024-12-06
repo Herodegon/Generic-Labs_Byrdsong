@@ -51,7 +51,7 @@ if(currentEnemyPoints > 0) {
 	
 	
 	if(currentEnemyPoints > totalIntensity1) {
-		audio_sound_gain(snd_enemyIntensity1, min(1, (currentEnemyPoints-totalIntensity1)*enemySoundAdjust),0)
+		audio_sound_gain(snd_enemyIntensity1, min(1, (currentEnemyPoints-totalIntensity1)/intensityLevel1),0)
 	}else if(totalEnemyPoints > totalIntensity1) {
 		audio_sound_gain(snd_enemyIntensity1, .05, 0)
 	}else {
@@ -59,7 +59,7 @@ if(currentEnemyPoints > 0) {
 	}
 	
 	if(currentEnemyPoints > totalIntensity2) {
-		audio_sound_gain(snd_enemyIntensity2, min(1, (currentEnemyPoints-totalIntensity2)*enemySoundAdjust),0)
+		audio_sound_gain(snd_enemyIntensity2, min(1, (currentEnemyPoints-totalIntensity2)/intensityLevel2),0)
 	}else if(totalEnemyPoints > totalIntensity2) {
 		audio_sound_gain(snd_enemyIntensity2, .05, 0)
 	}else {
@@ -68,7 +68,7 @@ if(currentEnemyPoints > 0) {
 	
 	
 	if(currentEnemyPoints > totalIntensity3) {
-		audio_sound_gain(snd_enemyIntensity3, min(1, (currentEnemyPoints-totalIntensity3)*enemySoundAdjust),0)
+		audio_sound_gain(snd_enemyIntensity3, min(1, (currentEnemyPoints-totalIntensity3)/intensityLevel3),0)
 	}else if(totalEnemyPoints > totalIntensity3) {
 		audio_sound_gain(snd_enemyIntensity3, .05, 0)
 	}else {
