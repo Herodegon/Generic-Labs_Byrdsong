@@ -69,6 +69,7 @@ poolEnemies =
 	}
 ];
 
+
 maxBudget = 8;
 waveTimer = 3*MILLISECONDS;		//Time in milliseconds
 currTimer = waveTimer;
