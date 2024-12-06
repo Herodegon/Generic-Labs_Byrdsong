@@ -4,6 +4,6 @@
 // Inherit the parent event
 event_inherited();
 
-targetRange = 50;
-
+targetRange = 100;
+canShoot = true;
 

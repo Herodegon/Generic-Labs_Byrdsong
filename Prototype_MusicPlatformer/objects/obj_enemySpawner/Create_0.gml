@@ -66,6 +66,24 @@ poolEnemies =
 		object: obj_enemy,
 		sprite: spr_enemy_down,
 		cost: 1
+	},
+	{
+		name: "Rabid Raccoon",
+		object: obj_enemy_rabid,
+		sprite: spr_enemy_down,
+		cost: 5
+	},
+	{
+		name: "Super Raccoon",
+		object: obj_enemy_mini_boss,
+		sprite: spr_enemy_down,
+		cost: 20
+	},
+	{
+		name: "Snake",
+		object: obj_snake,
+		sprite: spr_spitter_down,
+		cost: 1
 	}
 ];
 

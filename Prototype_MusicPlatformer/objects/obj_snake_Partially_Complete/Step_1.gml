@@ -16,4 +16,18 @@ else
 	currState = ENEMY_STATES.CHASE;
 }
 if(currState = ENEMY_STATES.FIRE && instance_exists(obj_player)) {
+	var ex, ey
+	if(canShoot) {
+	canShoot = false;
+	alarm[0] = 50
+	instance_create_layer(x,y,"Instances", obj_fire)
+	/*
+	ex = instance_nearest(x, y, obj_player).x;
+	ey = instance_nearest(x, y, obj_player).y;
+	with (instance_create_layer(x,y,"Instances", obj_fire)) {
+			direction = point_direction(x, y, ex, ey);
+		}
+		*/
+	}
+
 }

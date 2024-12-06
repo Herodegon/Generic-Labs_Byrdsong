@@ -4,6 +4,3 @@
 // Inherit the parent event
 event_inherited();
 
-targetRange = 50;
-
-
