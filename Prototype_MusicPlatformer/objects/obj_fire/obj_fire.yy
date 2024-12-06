@@ -12,7 +12,9 @@
   ],
   "managed":true,
   "name":"obj_fire",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"obj_enemy","path":"objects/obj_enemy/obj_enemy.yy",},"propertyId":{"name":"musicPointValue","path":"objects/obj_enemy/obj_enemy.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"0",},
+  ],
   "parent":{
     "name":"Enemy Types",
     "path":"folders/Objects/Enemy Types.yy",
