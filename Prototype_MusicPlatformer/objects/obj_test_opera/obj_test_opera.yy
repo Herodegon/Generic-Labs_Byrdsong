@@ -9,8 +9,8 @@
   "name":"obj_test_opera",
   "overriddenProperties":[],
   "parent":{
-    "name":"Note Types",
-    "path":"folders/Objects/Note Types.yy",
+    "name":"Player Projectiles",
+    "path":"folders/Objects/Note Types/Player Projectiles.yy",
   },
   "parentObjectId":{
     "name":"obj_note",

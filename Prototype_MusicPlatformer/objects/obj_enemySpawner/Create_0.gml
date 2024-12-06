@@ -1,13 +1,21 @@
 /// @description Initialize spawner
 // You can write your code in this editor
 
-enum SpawnWall
+enum SPAWN_WALL
 {
 	LEFT,
 	RIGHT,
 	TOP,
 	BOTTOM,
 	NONE
+}
+
+enum ENEMY_STATES
+{
+	PATROL,
+	CHASE,
+	FIRE,
+	CHARGE,
 }
 
 spawnEnemies = function(num,obj,spr)
@@ -29,21 +37,21 @@ spawnEnemies = function(num,obj,spr)
 		{
 			switch(spawnWallState)
 			{
-				case SpawnWall.LEFT:		//Left Wall
-					obj_x = camera.cam_x;
-					obj_y = irandom_range(camera.cam_y,camera.cam_y+camera.cam_h)-padding;
+				case SPAWN_WALL.LEFT:		//Left Wall
+					obj_x = camera.cam_x-padding;
+					obj_y = irandom_range(camera.cam_y,camera.cam_y+camera.cam_h);
 					break;
-				case SpawnWall.RIGHT:		//Right Wall
-					obj_x = camera.cam_x+camera.cam_w;
-					obj_y = irandom_range(camera.cam_y,camera.cam_y+camera.cam_h)+padding;
+				case SPAWN_WALL.RIGHT:		//Right Wall
+					obj_x = camera.cam_x+camera.cam_w+padding;
+					obj_y = irandom_range(camera.cam_y,camera.cam_y+camera.cam_h);
 					break;
-				case SpawnWall.TOP:			//Top Wall
-					obj_x = irandom_range(camera.cam_x,camera.cam_x+camera.cam_w)-padding;
-					obj_y = camera.cam_y;
+				case SPAWN_WALL.TOP:			//Top Wall
+					obj_x = irandom_range(camera.cam_x,camera.cam_x+camera.cam_w);
+					obj_y = camera.cam_y-padding;
 					break;
-				case SpawnWall.BOTTOM:		//Bottom Wall
-					obj_x = irandom_range(camera.cam_x,camera.cam_x+camera.cam_w)+padding;
-					obj_y = camera.cam_y+camera.cam_h;
+				case SPAWN_WALL.BOTTOM:		//Bottom Wall
+					obj_x = irandom_range(camera.cam_x,camera.cam_x+camera.cam_w);
+					obj_y = camera.cam_y+camera.cam_h+padding;
 					break;
 			}
 		}
@@ -51,7 +59,8 @@ spawnEnemies = function(num,obj,spr)
 	}
 }
 
-poolEnemies = [
+poolEnemies = 
+[
 	{
 		name: "Raccoon",
 		object: obj_enemy,
@@ -60,19 +69,19 @@ poolEnemies = [
 	}
 ];
 
-//TODO: Add enemy instance limit
 maxBudget = 8;
-waveTimer = 5*MILLISECONDS;		//Time in milliseconds
+waveTimer = 3*MILLISECONDS;		//Time in milliseconds
 currTimer = waveTimer;
 
-maxBudgetTimer = 15*MILLISECONDS;
+maxBudgetTimer = 20*MILLISECONDS;
 currBudgetTimer = maxBudgetTimer;
 budgetIncreaseMult = 1.1;
 
 canSpawn = true;
 isPaused = false;
+enemyLimit = 3000;
 
 #region Developer Options
-spawnWallState = SpawnWall.NONE;
+spawnWallState = SPAWN_WALL.NONE;
 
 #endregion

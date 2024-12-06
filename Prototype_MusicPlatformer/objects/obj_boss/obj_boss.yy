@@ -9,7 +9,10 @@
     "name":"Enemy Types",
     "path":"folders/Objects/Enemy Types.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_enemy",
+    "path":"objects/obj_enemy/obj_enemy.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -27,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_boss",
+    "path":"sprites/spr_boss/spr_boss.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
