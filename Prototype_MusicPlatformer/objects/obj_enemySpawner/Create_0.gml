@@ -79,12 +79,7 @@ poolEnemies =
 		sprite: spr_enemy_down,
 		cost: 20
 	},
-	{
-		name: "Snake",
-		object: obj_snake,
-		sprite: spr_spitter_down,
-		cost: 1
-	}
+
 ];
 
 
