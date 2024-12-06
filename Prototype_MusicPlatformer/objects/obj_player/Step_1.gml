@@ -208,7 +208,6 @@ if (!isPaused)
 if(instance_exists(obj_soundMachine)) {
 	
 	#region Nearby Enemy Calculations
-	// Todo, detect how many points worht of enemies are nearby and feed that to the sound machine
 	var nearbyEnemyMusicPoints = 0;
 	var totalEnemes = global.numEnemies;
 	// if(point_distance(obj_player.x, obj_player.y, obj_enemy.x, obj_enemy.y) < 150) {
@@ -235,6 +234,8 @@ if(instance_exists(obj_soundMachine)) {
 	#endregion
 	
 	#region Music attack calculations
+	// Currently unneeded now
+	/*
 	if(keyboard_check(Controls.note_right) or keyboard_check(Controls.note_left) or keyboard_check(Controls.note_up) or keyboard_check(Controls.note_down)) {
 		// Add a number to singingLoudness such that it takes 3 seconds to get to full volume
 		obj_soundMachine.targetSingingPoints += (1 / fps) / 3; 
@@ -244,7 +245,7 @@ if(instance_exists(obj_soundMachine)) {
 		obj_soundMachine.targetSingingPoints  -= (1 / fps) / 5;
 		obj_soundMachine.targetSingingPoints  = max(obj_soundMachine.targetSingingPoints , 0);// Cap singing loudness at 0
 	}
-	
+	*/
 	#endregion
 }
 

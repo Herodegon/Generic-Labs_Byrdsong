@@ -17,6 +17,7 @@ phraseExample =
 	currLevel: 1,
 	object: obj_test_quarternote,
 	sprite: noone,
+	musicPointValue: 1,
 	combination: [NOTE_DIRECTION.DOWN,
 					NOTE_DIRECTION.DOWNRIGHT,
 					NOTE_DIRECTION.RIGHT]
@@ -33,7 +34,8 @@ basicNote =
 	maxLevel: 10,
 	currLevel: 1,
 	object: obj_note,						
-	sprite: spr_eighthnote,					
+	sprite: spr_eighthnote,		
+	musicPointValue: .25,
 	combination: noone,						// Does not have combo input		
 }
 
@@ -48,9 +50,10 @@ poolPhrases =
 			desc: "A mass of notes fired in a single direction.",
 			noteType: NOTE_TYPE.SINGLENOTE,
 			maxLevel: 10,
-			currLevel: 1,
+			currLevel: 2,
 			object: obj_test_quarternote,
 			sprite: noone,
+			musicPointValue: 1,
 			combination: [NOTE_DIRECTION.DOWN,
 						  NOTE_DIRECTION.DOWNRIGHT,
 						  NOTE_DIRECTION.RIGHT]
@@ -65,6 +68,7 @@ poolPhrases =
 		currLevel: 1,
 		object: obj_test_wave,
 		sprite: noone,
+		musicPointValue: 3,
 		combination: [NOTE_DIRECTION.LEFT,
 					  NOTE_DIRECTION.RIGHT,
 					  NOTE_DIRECTION.DOWN]
@@ -79,6 +83,7 @@ poolPhrases =
 		currLevel: 1,
 		object: obj_test_opera,
 		sprite: noone,
+		musicPointValue: 10,
 		combination: [NOTE_DIRECTION.UP,
 					  NOTE_DIRECTION.DOWN,
 					  NOTE_DIRECTION.LEFT,
