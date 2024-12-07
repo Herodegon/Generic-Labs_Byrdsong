@@ -1,19 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_quarternote",
+  "%Name":"obj_xxp",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_quarternote",
+  "name":"obj_xxp",
   "overriddenProperties":[],
   "parent":{
-    "name":"Note Types",
-    "path":"folders/Objects/Note Types.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":{
-    "name":"obj_note",
-    "path":"objects/obj_note/obj_note.yy",
+    "name":"obj_xp",
+    "path":"objects/obj_xp/obj_xp.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_quarternote",
-    "path":"sprites/spr_quarternote/spr_quarternote.yy",
+    "name":"spr_xxp",
+    "path":"sprites/spr_xxp/spr_xxp.yy",
   },
   "spriteMaskId":null,
   "visible":true,

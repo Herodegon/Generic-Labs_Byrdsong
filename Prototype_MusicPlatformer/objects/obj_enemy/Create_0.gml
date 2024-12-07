@@ -9,6 +9,7 @@ depth = DEPTH_ENEMY;
 #region Enemy Variables
 hp = 1;			//Number of hits before enemy is destroyed
 damage = 1;		//Damage enemy deals 
+objDrop = obj_xp;
 
 moveSpeed = 1;
 moveSpeed_diag = 0.5;

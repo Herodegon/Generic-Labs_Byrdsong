@@ -4,4 +4,5 @@
 // Inherit the parent event
 event_inherited();
 
-//if (image_index == despawnFrames) {instance_destroy();}
+xpGain = 9;
+

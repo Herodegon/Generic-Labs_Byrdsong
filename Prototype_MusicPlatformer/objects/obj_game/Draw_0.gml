@@ -43,16 +43,24 @@ if (global.gamePaused && global.displayPaused)
 	draw_set_valign(fa_center);
 	draw_text(camera.cam_centerX,camera.cam_centerY,"Game Paused");
 	
-	draw_set_font(fnt_pauseText);
+	draw_set_font(fnt_descText);
 	draw_set_color(c_black);
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
-	draw_text(camera.cam_centerX + 150,camera.cam_centerY - 100,"Bass");
-	draw_text(camera.cam_centerX + 150,camera.cam_centerY - 80,"<->-v")
-	draw_text(camera.cam_centerX,camera.cam_centerY - 100,"Quarter Note");
-	draw_text(camera.cam_centerX,camera.cam_centerY - 80,"v-> + v->");
-	draw_text(camera.cam_centerX - 150,camera.cam_centerY - 100,"Opera");
-	draw_text(camera.cam_centerX - 150,camera.cam_centerY - 80,"^-v-<-> ");
+	
+	var spriteWidth_input = sprite_get_width(spr_right);
+	var posX = camera.cam_centerX;
+	var posY = camera.cam_centerY-100;
+	var paddingX = 150;
+	var paddingY = 20;
+	for (var i = 0; i < array_length(obj_player.availablePhrases); i++)
+	{
+		var phrase = obj_player.availablePhrases[i];
+		var textPos = posX+(paddingX*(i-1));
+		draw_text(textPos,posY,phrase.name);
+		drawInputCombo(textPos-(spriteWidth_input*(array_length(phrase.combination)/2)),posY+paddingY,phrase.combination,false);
+	}
+		
 }
 
 #endregion

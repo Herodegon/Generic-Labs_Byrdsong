@@ -1,20 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_wave",
+  "%Name":"obj_xxxp",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_wave",
+  "name":"obj_xxxp",
   "overriddenProperties":[],
   "parent":{
-    "name":"Note Types",
-    "path":"folders/Objects/Note Types.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":{
-    "name":"obj_note",
-    "path":"objects/obj_note/obj_note.yy",
+    "name":"obj_xp",
+    "path":"objects/obj_xp/obj_xp.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_wave",
-    "path":"sprites/spr_wave/spr_wave.yy",
+    "name":"spr_xxxp",
+    "path":"sprites/spr_xxxp/spr_xxxp.yy",
   },
   "spriteMaskId":null,
   "visible":true,

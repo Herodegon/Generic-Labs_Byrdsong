@@ -6,7 +6,7 @@ event_inherited();
 
 stats = 
 {
-	max_hp: 500,
+	max_hp: 1,
 	damage: 2,
 	knockback: 0
 }

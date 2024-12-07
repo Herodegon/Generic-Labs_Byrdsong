@@ -13,7 +13,7 @@ stats =
 
 patternInfo =
 {
-	numNotes: 4,
+	numNotes: 6,
 	maxAngle: 30,
 	minAngle: -30,
 	radius: 4
