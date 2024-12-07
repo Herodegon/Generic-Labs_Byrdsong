@@ -7,7 +7,7 @@ if (sprite_index == spr_player_dead)
 {
 	if (image_index == sprite_get_number(sprite_index))
 	{
-		instance_destroy();
+		instance_create_layer(x,y,"Instances",obj_end_screen);
 	}
 }
 
