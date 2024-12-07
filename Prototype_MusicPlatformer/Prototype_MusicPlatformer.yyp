@@ -105,6 +105,7 @@
     {"id":{"name":"snd_enemyIntensity2","path":"sounds/snd_enemyIntensity2/snd_enemyIntensity2.yy",},},
     {"id":{"name":"snd_enemyIntensity3","path":"sounds/snd_enemyIntensity3/snd_enemyIntensity3.yy",},},
     {"id":{"name":"snd_enemyMelody","path":"sounds/snd_enemyMelody/snd_enemyMelody.yy",},},
+    {"id":{"name":"snd_menuMusic","path":"sounds/snd_menuMusic/snd_menuMusic.yy",},},
     {"id":{"name":"spr_block","path":"sprites/spr_block/spr_block.yy",},},
     {"id":{"name":"spr_boss","path":"sprites/spr_boss/spr_boss.yy",},},
     {"id":{"name":"spr_down_gui","path":"sprites/spr_down_gui/spr_down_gui.yy",},},
