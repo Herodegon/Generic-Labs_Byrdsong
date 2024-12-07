@@ -42,6 +42,17 @@ if (global.gamePaused && global.displayPaused)
 	draw_set_halign(fa_center);
 	draw_set_valign(fa_center);
 	draw_text(camera.cam_centerX,camera.cam_centerY,"Game Paused");
+	
+	draw_set_font(fnt_pauseText);
+	draw_set_color(c_black);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_center);
+	draw_text(camera.cam_centerX + 150,camera.cam_centerY - 100,"Bass");
+	draw_text(camera.cam_centerX + 150,camera.cam_centerY - 80,"<->-v")
+	draw_text(camera.cam_centerX,camera.cam_centerY - 100,"Quarter Note");
+	draw_text(camera.cam_centerX,camera.cam_centerY - 80,"v-> + v->");
+	draw_text(camera.cam_centerX - 150,camera.cam_centerY - 100,"Opera");
+	draw_text(camera.cam_centerX - 150,camera.cam_centerY - 80,"^-v-<-> ");
 }
 
 #endregion
