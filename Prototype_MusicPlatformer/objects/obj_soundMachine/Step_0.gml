@@ -1,15 +1,65 @@
 /// @description Insert description here
 // You can write your code in this editor
-targetSingingPoints = min(targetSingingPoints, .7);
-audio_sound_gain(snd_byrdSinging, targetSingingPoints, 0); //Singing points updated in player step
 audio_sound_gain(snd_byrdWalking, walkingLoudness, 0); // Walking loudness updated in player step
+
+
+#region Handling different attacks
+
+#region Handle updating currentSingingPoints to go to target points
+var pointDifference = targetSingingPoints - currentSingingPoints;
+var pointAdjust = max(.1, pointDifference * .01);
+
+if(abs(targetSingingPoints - currentSingingPoints) < pointAdjust) {
+	currentSingingPoints = targetSingingPoints;
+}else {
+	if(currentSingingPoints < targetSingingPoints) {
+		currentSingingPoints += pointAdjust;
+	}else {
+		currentSingingPoints -= pointAdjust;
+	}
+}
+#endregion
+
+#region Update the loudness of the music based on currentSingingPoints
+var inputSingingMusicValue = min(1, currentSingingPoints);
+
+
+#region Percent Adjust function to be percentile based between values
+var singingMusicCap = .5
+var outputSingingMusicValue = inputSingingMusicValue * singingMusicCap;
+audio_sound_gain(snd_byrdSinging, outputSingingMusicValue, 0); //Singing points updated in player step
+#endregion
+
+#endregion
+
+#region Adjust target singing points exponentially
+
+// Reduce points above 1 exponentially
+if(targetSingingPoints > 1) {
+	pointDifference = targetSingingPoints - 1;
+	pointAdjust = max(.01, pointDifference * .01);
+	
+	targetSingingPoints -= pointAdjust;
+}else {
+	var singingPointReduction = .5
+	targetSingingPoints -= singingPointReduction/(fps * 2); // Reduces target singing points by an amount every second.
+	targetSingingPoints = max(targetSingingPoints, 0); // Cap the low at 0.
+}
+
+
+#endregion
+
+
+show_debug_message("Target Attack Music Points: {0}", targetSingingPoints);
+show_debug_message("Current Attack Music Points: {0}", currentSingingPoints);
+
+#endregion
+
+#region Handling enemy music
 
 var totalEnemyPoints = global.numEnemyMusicPoints; // This is handled by the enemy create and destroy events
 // currentEnemyPoints already exists. This is handled by the sound machine
 // targetEnemyPoints also already exists. This is handled by the player beginstep event
-
-
-#region Handling enemy music
 
 #region Updating currentEnemyPoints
 // Current Enemy points should automatically adjust to attempt to reach target enemy points.
@@ -79,8 +129,8 @@ if(currentEnemyPoints > 0) {
 
 #endregion
 
-show_debug_message("Total Enemy Music Points: {0}", global.numEnemyMusicPoints);
-show_debug_message("Target Enemy Music Points: {0}", targetEnemyPoints);
-show_debug_message("Current Enemy Music Points: {0}", currentEnemyPoints);
+// show_debug_message("Total Enemy Music Points: {0}", global.numEnemyMusicPoints);
+// show_debug_message("Target Enemy Music Points: {0}", targetEnemyPoints);
+// show_debug_message("Current Enemy Music Points: {0}", currentEnemyPoints);
 
 #endregion
