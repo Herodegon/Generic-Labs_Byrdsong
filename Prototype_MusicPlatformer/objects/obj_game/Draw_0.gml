@@ -6,21 +6,18 @@
 var camera = getCameraFeatures();
 
 #region Draw Timer
-var timerX = camera.cam_centerX;
-var timerY = camera.cam_centerY-(camera.cam_h/3);
-var minute = int64(global.gameTimer/(60*MILLISECONDS));
-var second = (global.gameTimer%(60*MILLISECONDS))/MILLISECONDS;
-draw_set_font(fnt_descText);
-draw_set_color(c_black);
-draw_set_halign(fa_center);
-draw_set_valign(fa_bottom);
-draw_text(timerX,timerY,string("{0}:{1}",minute,second));
+if (global.toggleGUI)
+{
+	var timerX = camera.cam_centerX;
+	var timerY = camera.cam_centerY-(camera.cam_h/3);
+	drawTimer(timerX,timerY);
+}
 
 #endregion
 
 #region Player HP, EXP, notes queued
 if (instance_exists(obj_player) && global.toggleGUI)
-{
+{	
 	with (obj_player)
 	{
 		var spriteWidth = sprite_get_width(sprite_index);

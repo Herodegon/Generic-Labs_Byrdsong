@@ -26,6 +26,7 @@ global.displayPaused = false;
 global.forceSpawn = false;
 
 global.numEnemies = 0;
+global.enemiesKilled = 0;
 global.numEnemyMusicPoints = 0;     //How many music points worth of enemies there are. Handled in enemy create and destroy
 
 global.devCommandsActive = false;

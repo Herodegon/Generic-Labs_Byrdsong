@@ -28,7 +28,20 @@ function getDirectionSprite(dir,isGUI)
 			break;
 	}
 	return sprite;
-}
+};
+
+function drawTimer(posX,posY)
+{
+	var minute = int64(global.gameTimer/(60*MILLISECONDS));
+	var second = (global.gameTimer%(60*MILLISECONDS))/MILLISECONDS;
+	draw_set_font(fnt_descText);
+	draw_set_color(c_black);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_bottom);
+	var stringTime = string("{0}:{1}",minute,second);
+	draw_text(posX,posY,stringTime);
+	return stringTime;
+};
 
 function drawProgressBar(xPos,yPos,width,maxProgress,currProgress,colorCurr,colorMax=c_black)
 {
