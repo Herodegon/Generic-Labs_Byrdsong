@@ -77,7 +77,7 @@ poolEnemies =
 		name: "Super Raccoon",
 		object: obj_enemy_mini_boss,
 		sprite: spr_enemy_down,
-		cost: 1
+		cost: 20
 	},
 
 ];
