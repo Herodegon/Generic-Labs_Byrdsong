@@ -57,7 +57,7 @@ with (obj_xp)
 #endregion
 
 #region Check enemy collision
-if (!isPaused)
+if (!isPaused && !isInvincible)
 {
 	with (obj_enemy)
 	{
@@ -66,6 +66,10 @@ if (!isPaused)
 			if (other.hp > 0)
 			{
 				other.hp -= damage;
+				other.image_blend = c_red;
+				other.isInvincible = true;
+				other.invulnerableTimer = other.invulnerablePeriod;
+				other.hitTimer = other.invulnerablePeriod*1.1;
 			}
 		}
 	}
@@ -79,12 +83,14 @@ if (hp < 0)
 #endregion
 
 #region Health Check
-if (hp <= 0 && !isInvincible && !isPaused)
+if (hp <= 0 && !isPaused)
 {
 	sprite_index = spr_player_dead;
 	image_speed = 0.2;
+	image_blend = -1;
 	canMove = false;
 	canAttack = false;
+	isDead = true;
 }
 
 #endregion
@@ -183,7 +189,7 @@ else if (currPhrase && noteDir == NOTE_DIRECTION.NONE)		// Wait for player to st
 #endregion
 
 #region Timers
-if (!isPaused)
+if (!isPaused && !isDead)
 {
 	if (attackTimer > 0)
 	{
@@ -198,6 +204,24 @@ if (!isPaused)
 		{
 			inputQueue = [];
 			inputQueue_size = 0;
+		}
+	}
+	
+	if (invulnerableTimer > 0)
+	{
+		invulnerableTimer -= global.deltaTime;
+		if (invulnerableTimer <= 0)
+		{
+			isInvincible = false;
+		}
+	}
+	
+	if (hitTimer > 0)
+	{
+		hitTimer -= global.deltaTime;
+		if (hitTimer <= 0)
+		{
+			image_blend = -1;
 		}
 	}
 }

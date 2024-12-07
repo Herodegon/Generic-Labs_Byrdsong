@@ -1,10 +1,11 @@
 /// @description Spawn enemies
 // You can write your code in this editor
 
+#region Run Timer Logic
 if (!isPaused)
 {
+	#region Enemy Spawning
 	currTimer -= global.deltaTime;
-	currBudgetTimer -= global.deltaTime;
 	if ((currTimer <= 0 && canSpawn && global.numEnemies < enemyLimit) || global.forceSpawn)
 	{
 		var currBudget = maxBudget;
@@ -24,23 +25,29 @@ if (!isPaused)
 		}
 		currTimer = waveTimer;
 	}
-}
-
-#region Check timer to increase max budget
-if (!isPaused)
-{
+	
+	#endregion
+	
+	#region Increase Budget
+	currBudgetTimer -= global.deltaTime;
 	if (currBudgetTimer <= 0)
 	{
 		maxBudget = round(maxBudget*budgetIncreaseMult);
 		currBudgetTimer = maxBudgetTimer;
 	}
 	
+	#endregion
+	
+	#region Increase Enemy Pool
+	currEnemyTimer -= global.deltaTime;
 	if (currEnemyTimer <= 0)
 	{
 		array_push(availableEnemies,obj_game.poolEnemies[0])
 		array_delete(obj_game.poolEnemies,0,1);
 		currEnemyTimer = addEnemyTimer;
 	}
+	
+	#endregion
 }
 
 #endregion

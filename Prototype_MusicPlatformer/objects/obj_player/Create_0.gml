@@ -61,8 +61,11 @@ moveVector_y = 0;
 #region Timers
 attackDelay = 0.25*MILLISECONDS
 inputWindow = 0.4*MILLISECONDS
+invulnerablePeriod = 0.1*MILLISECONDS
 attackTimer = 0;
 inputTimer = 0;
+invulnerableTimer = 0;
+hitTimer = 0;
 
 #endregion
 
@@ -84,6 +87,7 @@ canLevelUp = false;
 phraseMode = false;
 
 isPaused = false;
+isDead = false;
 
 #endregion
 
