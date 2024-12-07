@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 #region Chase player
-if (canMove && !isPaused)
+if (instance_exists(obj_player) && canMove && !isPaused)
 {
 	if (currState == ENEMY_STATES.CHASE)
 	{	
