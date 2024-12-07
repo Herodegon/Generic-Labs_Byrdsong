@@ -4,32 +4,56 @@
 #region Update Timer
 if (instance_exists(obj_player))
 {
+	//Set start time to after game initialization
 	if (global.gameTimer_start == -1) {global.gameTimer_start = get_timer();}
 	
+	#region Calculate Game Time
 	var prevTime = global.gameTimer;
-	if (global.gamePaused)
+	
+	#region Calculate Time Paused
+	if (global.gamePaused && prevPauseState == global.gamePaused)
 	{
-		timePaused = get_timer()-global.gamePaused_start;	
+		prevTime = timePaused;
+		timePaused = get_timer()-global.gamePaused_start;
 	}
 	else if (!global.gamePaused && timePaused > 0)
 	{
 		totalTimePaused += timePaused;
 		timePaused = 0;
 	}
+	
+	#endregion
+	
 	global.gameTimer = int64((get_timer()-global.gameTimer_start-timePaused-totalTimePaused)/MILLISECONDS);
 	show_debug_message("Game Time: {0}",global.gameTimer);
-	global.deltaTime = global.gameTimer-prevTime;
+	
+	#endregion
+	
+	#region Calculate Delta Time
+	if (global.gamePaused)
+	{
+		global.deltaTime = int64((timePaused-prevTime)/MILLISECONDS);
+	}
+	else
+	{
+		global.deltaTime = global.gameTimer-prevTime;
+	}
 	show_debug_message("Delta Time: {0}",global.deltaTime);
+	
+	#endregion
 }
 
 #endregion
 
+#region Pause Screen
 if (keyboard_check_pressed(vk_escape) && global.canPause)
 {
 	global.gamePaused = !global.gamePaused;
 	global.displayPaused = !global.displayPaused;
 	global.toggleGUI = !global.toggleGUI;
 }
+
+#endregion
 
 #region Game State
 if (prevPauseState != global.gamePaused)
