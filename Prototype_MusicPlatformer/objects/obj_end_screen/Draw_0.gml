@@ -11,5 +11,6 @@
 	draw_text(x,y+100,"ESC to return to main menu");
 
 	draw_text(x,y-100,string_concat("Enemies Calmed: ", obj_player.enemiesKilled));
+
 	
 	

@@ -3,8 +3,8 @@
   "%Name":"spr_enemy_side",
   "bboxMode":0,
   "bbox_bottom":15,
-  "bbox_left":2,
-  "bbox_right":13,
+  "bbox_left":4,
+  "bbox_right":12,
   "bbox_top":1,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -13,8 +13,6 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"","%Name":"62f00e7f-e2bd-47de-a6ae-a025c74d5f08","name":"62f00e7f-e2bd-47de-a6ae-a025c74d5f08","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"eb5ae5c0-a61a-4e2d-b467-581717721145","name":"eb5ae5c0-a61a-4e2d-b467-581717721145","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"7007829d-5685-408a-9aaa-695c5c8e11df","name":"7007829d-5685-408a-9aaa-695c5c8e11df","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -51,7 +49,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":3.0,
+    "length":1.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -73,12 +71,6 @@
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
                 "0":{"$SpriteFrameKeyframe":"","Id":{"name":"62f00e7f-e2bd-47de-a6ae-a025c74d5f08","path":"sprites/spr_enemy_side/spr_enemy_side.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"cc63e3ab-11c2-4b5a-bee4-dcfb6c132dd3","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"eb5ae5c0-a61a-4e2d-b467-581717721145","path":"sprites/spr_enemy_side/spr_enemy_side.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"b5f2c6e6-db8b-4650-b2fd-58f0bd3f133c","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7007829d-5685-408a-9aaa-695c5c8e11df","path":"sprites/spr_enemy_side/spr_enemy_side.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"31c547a3-ba22-485a-bbe2-bb944060d81c","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
