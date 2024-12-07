@@ -7,15 +7,19 @@ if (instance_exists(obj_player))
 	if (global.gameTimer_start == -1) {global.gameTimer_start = get_timer();}
 	
 	var prevTime = global.gameTimer;
-	global.gameTimer = int64((get_timer()-global.gameTimer_start)/MILLISECONDS)-timePaused;
+	if (global.gamePaused)
+	{
+		timePaused = get_timer()-global.gamePaused_start;	
+	}
+	else if (!global.gamePaused && timePaused > 0)
+	{
+		totalTimePaused += timePaused;
+		timePaused = 0;
+	}
+	global.gameTimer = int64((get_timer()-global.gameTimer_start-timePaused-totalTimePaused)/MILLISECONDS);
 	show_debug_message("Game Time: {0}",global.gameTimer);
 	global.deltaTime = global.gameTimer-prevTime;
 	show_debug_message("Delta Time: {0}",global.deltaTime);
-	if (global.gamePaused)
-	{
-		timePaused += global.deltaTime;
-		show_debug_message("Time Paused: {0}",timePaused);
-	}
 }
 
 #endregion
@@ -48,6 +52,11 @@ if (prevPauseState != global.gamePaused)
 	with (obj_enemySpawner)
 	{
 		isPaused = !isPaused;	
+	}
+	
+	if (global.gamePaused)
+	{
+		global.gamePaused_start = get_timer();
 	}
 }
 	

@@ -5,8 +5,8 @@
 event_inherited();
 
 image_blend = c_red;
-hp = 4;			//Number of hits before enemy is destroyed
-damage = 2;		//Damage enemy deals 
+hp = 6;			//Number of hits before enemy is destroyed
+damage = 3;		//Damage enemy deals 
 objDrop = obj_xxp;
 
 moveSpeed = 1.4;

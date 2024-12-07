@@ -90,6 +90,7 @@
     {"id":{"name":"rm_main_menu","path":"rooms/rm_main_menu/rm_main_menu.yy",},},
     {"id":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
     {"id":{"name":"script_camera","path":"scripts/script_camera/script_camera.yy",},},
+    {"id":{"name":"script_enemies","path":"scripts/script_enemies/script_enemies.yy",},},
     {"id":{"name":"script_GUI","path":"scripts/script_GUI/script_GUI.yy",},},
     {"id":{"name":"script_helper","path":"scripts/script_helper/script_helper.yy",},},
     {"id":{"name":"script_noteSystem","path":"scripts/script_noteSystem/script_noteSystem.yy",},},

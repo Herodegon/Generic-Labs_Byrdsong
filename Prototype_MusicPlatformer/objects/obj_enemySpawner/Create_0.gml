@@ -59,29 +59,7 @@ spawnEnemies = function(num,obj,spr)
 	}
 }
 
-poolEnemies = 
-[
-	{
-		name: "Raccoon",
-		object: obj_enemy,
-		sprite: spr_enemy_down,
-		cost: 1
-	},
-	{
-		name: "Rabid Raccoon",
-		object: obj_enemy_rabid,
-		sprite: spr_enemy_down,
-		cost: 5
-	},
-	{
-		name: "Super Raccoon",
-		object: obj_enemy_mini_boss,
-		sprite: spr_enemy_down,
-		cost: 12
-	},
-
-];
-
+availableEnemies = [];
 
 maxBudget = 8;
 waveTimer = 3*MILLISECONDS;		//Time in milliseconds
@@ -90,6 +68,9 @@ currTimer = waveTimer;
 maxBudgetTimer = 20*MILLISECONDS;
 currBudgetTimer = maxBudgetTimer;
 budgetIncreaseMult = 1.1;
+
+addEnemyTimer = 60*MILLISECONDS;
+currEnemyTimer = 0;
 
 canSpawn = true;
 isPaused = false;

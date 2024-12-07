@@ -33,6 +33,7 @@ global.devCommandsActive = false;
 
 prevPauseState = global.gamePaused;
 timePaused = 0;
+totalTimePaused = 0;
 
 #endregion
 
@@ -46,6 +47,7 @@ initCamera();
 #region Initialize scripts
 script_GUI();
 script_phrases();
+script_enemies();
 
 #endregion
 
