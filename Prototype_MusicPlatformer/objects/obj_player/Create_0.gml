@@ -49,6 +49,7 @@ hp = max_hp;
 max_xp = 8;			//XP needed to level up
 xp = 0;
 level = 0;				//Number of levels gained
+enemiesKilled = 0;
 itemPullRange = sprite_get_width(sprite_index)*2;
 
 moveSpeed = 2;
