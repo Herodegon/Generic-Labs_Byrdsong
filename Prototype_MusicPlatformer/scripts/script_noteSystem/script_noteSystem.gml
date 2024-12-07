@@ -180,6 +180,10 @@ function fireNote(struct,dir)
 	
 	noteObj.level = struct.currLevel;
 	if (noteObj.level > 1) {noteObj.canLevelUp = true;}
+	
+	if(object_exists(obj_soundMachine)) {
+		obj_soundMachine.targetSingingPoints += struct.musicPointValue;
+	}
 };
 
 function spawnPhraseNote(obj,moveState,angle,radius,stats)
