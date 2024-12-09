@@ -31,6 +31,8 @@ isBoss = false;
 
 isPaused = false;
 
+isInvincible = false;
+
 #endregion
 
 #region Handling Sound Machine

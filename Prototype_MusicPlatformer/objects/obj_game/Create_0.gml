@@ -16,6 +16,7 @@
 #region Initialize main game variables
 //These are variables used or tracked by the game's larger systems
 global.windowScale = 10;
+global.isFullscreen = true;
 global.gameTimer_start = -1;
 global.gameTimer = 0;				//Time passed since player spawned
 global.deltaTime = 0;				//Amount of time passed between frames
@@ -37,7 +38,6 @@ totalTimePaused = 0;
 
 #endregion
 
-
 #region Initialize window and camera
 initWindow();
 initCamera();
@@ -55,7 +55,5 @@ spawnPlayer();
 initEnemySpawner();
 initPhraseStore();
 initSoundMachine();
-
-instance_create_layer(room_width/2,(room_height*2)/5,"Instances",obj_boss);
 
 #endregion

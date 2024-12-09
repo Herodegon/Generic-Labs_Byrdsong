@@ -64,13 +64,19 @@ if (!isPaused && !isInvincible)
 			if (other.hp > 0)
 			{
 				other.hp -= damage;
-				other.image_blend = c_red;
-				other.isInvincible = true;
-				other.invulnerableTimer = other.invulnerablePeriod;
-				other.hitTimer = other.invulnerablePeriod*1.1;
+				tookDamage = true;
 			}
 		}
 	}
+}
+
+if (tookDamage)
+{
+	image_blend = c_red;
+	isInvincible = true;
+	invulnerableTimer = other.invulnerablePeriod;
+	hitTimer = other.invulnerablePeriod*1.1;	
+	tookDamage = false;
 }
 
 if (hp < 0)
@@ -174,7 +180,7 @@ if (noteDir != NOTE_DIRECTION.NONE && canAttack && !isPaused)
 	#region Spawn Attack
 	if (noteStruct != noone)
 	{
-		fireNote(noteStruct,noteDir);
+		fireNote(id,noteStruct,noteDir);
 		canAttack = false;
 		attackTimer = attackDelay;
 	}

@@ -10,8 +10,8 @@ image_alpha = 1;
 
 #region Note variables
 #region Note stats
-moveSpeed = obj_player.moveSpeed + 1;
-moveSpeed_diag = obj_player.moveSpeed_diag + 1;
+moveSpeed = 3;
+moveSpeed_diag = 2;
 moveVector_x = 0;
 moveVector_y = 0;
 moveDir = noone;			//When projectile direction is different than movement direction
@@ -40,7 +40,7 @@ patternInfo =
 moveState = NOTE_MOVEMENT.STRAIGHT;
 collisionObject = obj_enemy;
 
-despawnTimer = obj_player.attackDelay*2;
+despawnTimer = 0.5*MILLISECONDS;
 
 #region Default flags
 isDespawnSet = true;		//Set if object will despawn after x amount of time

@@ -37,12 +37,12 @@ else if (moveVector_x == 0 || moveVector_y == 0)
 	}
 	
 	//Checks if the player is standing still. If so don't animate and go to idle frame, otherwise animate.
-	if(moveVector_y == 0 and moveVector_x == 0) {
+	if(moveVector_y == 0 and moveVector_x == 0) 
+	{
 		image_speed = 0;
 		image_index = 0;
-	}else {
-		image_speed = 1;
 	}
+	else {image_speed = 1;}
 }
 
 #endregion

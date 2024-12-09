@@ -91,21 +91,38 @@ poolPhrases =
 	}
 ];
 
+bossDrops =
+{
+	screech:
+	{
+		name: "Screech",
+		desc: "A horrid pitch releases a small amount of notes that shoot from Byrd in fear.",
+		noteType: NOTE_TYPE.ECHONOTE,
+		maxLevel: 5,
+		currLevel: 1,
+		object: obj_screech,
+		sprite: noone,
+		musicPointValue: 20,
+		combination: [NOTE_DIRECTION.UP,
+					  NOTE_DIRECTION.LEFT,
+					  NOTE_DIRECTION.RIGHT]
+	}
+};
+
 bossPhrases = 
 [
 	{
 		name: "Screech",
 		desc: "A horrid pitch releases a small amount of notes that shoot from Byrd in fear.",
-		noteType: NOTE_TYPE.SINGLENOTE,
+		noteType: NOTE_TYPE.ECHONOTE,
 		maxLevel: 5,
 		currLevel: 1,
-		object: obj_test_quarternote,
+		object: obj_screech_boss,
+		drop: bossDrops.screech,
 		sprite: noone,
 		musicPointValue: 20,
-		combination: [NOTE_DIRECTION.DOWN,
-						NOTE_DIRECTION.DOWNRIGHT,
-						NOTE_DIRECTION.RIGHT]
+		combination: noone
 	}
-]
+];
 
 #endregion

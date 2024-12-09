@@ -62,13 +62,26 @@ function drawProgressBar(xPos,yPos,width,maxProgress,currProgress,colorCurr,colo
 
 function drawPhraseAnim(xPos,yPos,phrase)
 {
-	if (!instance_exists(phrase.object)) 
+	var canDraw = true;
+	if (instance_exists(phrase.object)) 
+	{
+		with (phrase.object)
+		{
+			if (isGuiObject)
+			{
+				canDraw = false;
+				break;
+			}
+		}
+	}
+	
+	if (canDraw)
 	{
 		if (phrase.noteType == NOTE_TYPE.WAVENOTE) {yPos *= 1.1;}
 		var obj = instance_create_layer(xPos,yPos,"Instances",phrase.object);
 		obj.isGuiObject = true;
-		switch(phrase.noteType)
-		{
+		switch (phrase.noteType)
+		{ 
 			case NOTE_TYPE.SINGLENOTE:
 				obj.moveVector_x = 1;
 				obj.despawnTimer = 1*MILLISECONDS;

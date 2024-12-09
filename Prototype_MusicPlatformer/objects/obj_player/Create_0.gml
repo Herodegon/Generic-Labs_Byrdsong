@@ -87,6 +87,7 @@ canLevelUp = false;
 phraseMode = false;
 
 isPaused = false;
+tookDamage = false;
 isDead = false;
 
 #endregion

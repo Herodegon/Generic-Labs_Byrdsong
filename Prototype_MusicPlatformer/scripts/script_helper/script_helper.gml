@@ -32,6 +32,11 @@ function initSoundMachine()
 	instance_create_layer(0,0,"Instances",obj_soundMachine);
 };
 
+function spawnWinScreen()
+{
+	instance_create_layer(0,0,"Instances",obj_win_screen);	
+};
+
 function moveMap(objMove_x,objMove_y)
 {
 	var layer_background = layer_get_id("Background");

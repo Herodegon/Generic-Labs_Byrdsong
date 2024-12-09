@@ -1,19 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_screech_boss",
+  "%Name":"obj_screech",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_screech_boss",
+  "name":"obj_screech",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemy Projectiles",
-    "path":"folders/Objects/Note Types/Enemy Projectiles.yy",
+    "name":"Player Projectiles",
+    "path":"folders/Objects/Note Types/Player Projectiles.yy",
   },
   "parentObjectId":{
-    "name":"obj_enemy_note",
-    "path":"objects/obj_enemy_note/obj_enemy_note.yy",
+    "name":"obj_note",
+    "path":"objects/obj_note/obj_note.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,5 +34,5 @@
   "solid":false,
   "spriteId":null,
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

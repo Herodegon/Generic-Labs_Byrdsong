@@ -9,17 +9,19 @@ if (instance_exists(objTether))
 	//If parent is GUI object, also become a GUI object
 	if (objTether.isGuiObject && isGuiObject == false) {isGuiObject = true;}
 	
-	if (canMove)
+	if (canMove && !isPaused)
 	{
 		var posX = objTether.x + round(radius*dcos(angle));
 		var posY = objTether.y + round(radius*dsin(angle));
 		x = posX;
 		y = posY;
-		if (moveState == NOTE_MOVEMENT.CIRCULAR)
+		if (moveState == NOTE_MOVEMENT.CIRCULAR ||
+			moveState == NOTE_MOVEMENT.CIRCULAREXTEND)
 		{
 			angle -= moveSpeed;
 		}
-		else if (moveState == NOTE_MOVEMENT.EXTEND)
+		if (moveState == NOTE_MOVEMENT.EXTEND ||
+			moveState == NOTE_MOVEMENT.CIRCULAREXTEND)
 		{
 			radius += moveSpeed;
 		}

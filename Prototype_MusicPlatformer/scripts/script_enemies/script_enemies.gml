@@ -23,3 +23,13 @@ poolEnemies =
 	},
 
 ];
+
+poolBosses =
+[
+	{
+		name: "Unwhole",
+		object: obj_boss,
+		sprite: spr_boss,
+		cost: noone
+	},
+];

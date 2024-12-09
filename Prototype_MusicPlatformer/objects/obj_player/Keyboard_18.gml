@@ -32,6 +32,11 @@ if (global.devCommandsActive)
 	{
 		obj_player.canLevelUp = true;
 	}
+	
+	if (keyboard_check_pressed(ord("W")))
+	{
+		spawnWinScreen();	
+	}
 
 	if (keyboard_check_pressed(vk_right))
 	{

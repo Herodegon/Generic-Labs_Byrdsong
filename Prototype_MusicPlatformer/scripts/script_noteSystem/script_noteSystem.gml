@@ -23,10 +23,12 @@ enum NOTE_TYPE
 
 enum NOTE_MOVEMENT
 {
-	STRAIGHT,		//Note travels in a straight line
-	RECTANGULAR,	//Note travels in a rectangular path about origin
-	CIRCULAR,		//Note travels in a circular path about origin
-	EXTEND			//Note extends from origin
+	STRAIGHT,			//Note travels in a straight line
+	EXTEND,				//Note extends from origin
+	RECTANGULAR,		//Note travels in a rectangular path about origin
+	RECTANGULAREXTEND,
+	CIRCULAR,			//Note travels in a circular path about origin
+	CIRCULAREXTEND
 }
 
 function getNoteDirection(Controls)
@@ -122,7 +124,7 @@ function getPhrase(phrases,queue)
 	return phrase;
 }
 
-function fireNote(struct,dir)
+function fireNote(obj,struct,dir)
 {
 	var noteVector_x = 0;
 	var noteVector_y = 0;
@@ -164,13 +166,13 @@ function fireNote(struct,dir)
 		default:
 			break;
 	}
-	var playerSprite = obj_player.sprite_index;
-	var obj_x = obj_player.x;
-	var obj_y = obj_player.y;
+	var objSprite = obj.sprite_index;
+	var obj_x = obj.x;
+	var obj_y = obj.y;
 	if (struct.noteType != NOTE_TYPE.ECHONOTE)
 	{
-		obj_x += (sprite_get_width(playerSprite)/2)*noteVector_x;
-		obj_y += (sprite_get_height(playerSprite)/2)*noteVector_y;
+		obj_x += (sprite_get_width(objSprite)/2)*noteVector_x;
+		obj_y += (sprite_get_height(objSprite)/2)*noteVector_y;
 	}
 	
 	var noteObj = instance_create_layer(obj_x,obj_y,"Instances",struct.object);
@@ -181,9 +183,11 @@ function fireNote(struct,dir)
 	noteObj.level = struct.currLevel;
 	if (noteObj.level > 1) {noteObj.canLevelUp = true;}
 	
-	if(object_exists(obj_soundMachine)) {
+	if(object_exists(obj_soundMachine) && obj.object_index == obj_player) {
 		obj_soundMachine.targetSingingPoints += struct.musicPointValue;
 	}
+	
+	return noteObj;
 };
 
 function spawnPhraseNote(obj,objCollision,moveState,angle,radius,stats)

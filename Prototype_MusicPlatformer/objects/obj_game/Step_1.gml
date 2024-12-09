@@ -61,6 +61,10 @@ if (prevPauseState != global.gamePaused)
 	with (obj_player)
 	{
 		isPaused = !isPaused;
+		if (image_speed != 0)
+		{
+			image_speed = 0;
+		}
 	}
 	
 	with (obj_note)

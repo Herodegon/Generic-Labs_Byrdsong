@@ -37,7 +37,7 @@ if (!isInvincible && !isPaused)
 {
 	with (collisionObject)
 	{
-		if (instance_place(x,y,other))
+		if (instance_place(x,y,other) && !isInvincible)
 		{
 			//Knockback
 			if (other.stats.knockback != 0)
@@ -47,6 +47,10 @@ if (!isInvincible && !isPaused)
 			}
 			hp -= other.stats.damage;
 			other.hp--;
+			if (other.collisionObject == obj_player)
+			{
+				tookDamage = true;	
+			}
 		}
 	}
 }

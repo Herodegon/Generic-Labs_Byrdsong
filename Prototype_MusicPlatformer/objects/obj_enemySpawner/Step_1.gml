@@ -42,9 +42,20 @@ if (!isPaused)
 	currEnemyTimer -= global.deltaTime;
 	if (currEnemyTimer <= 0)
 	{
-		array_push(availableEnemies,poolEnemies[0])
-		array_delete(poolEnemies,0,1);
+		if (array_length(poolEnemies) > 0)
+		{
+			array_push(availableEnemies,poolEnemies[0])
+			array_delete(poolEnemies,0,1);
+		}
 		currEnemyTimer = addEnemyTimer;
+	}
+	
+	currBossTimer -= global.deltaTime;
+	if (currBossTimer <= 0)
+	{
+		var boss = poolBosses[0];
+		spawnEnemies(1,boss.object,boss.sprite)
+		currBossTimer = addBossTimer;
 	}
 	
 	#endregion

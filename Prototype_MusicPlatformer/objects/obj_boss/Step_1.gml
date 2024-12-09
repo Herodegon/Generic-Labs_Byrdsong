@@ -25,13 +25,26 @@ if (instance_exists(obj_player))
 			obj_enemySpawner.enemySpawnerState = SPAWN_STATE.NORMAL;
 			obj_enemySpawner.setChaseTarget(obj_player);
 			other.currState = ENEMY_STATES.PATROL;
+			other.offset = 0;
+			other.currFireTimer = other.canFireTimer;
 		}
 	}
 }
 
 #endregion
 
-#region Boss Fight
+#region Timers
+if (!isPaused && currState == ENEMY_STATES.FIRE)
+{
+	currFireTimer -= global.deltaTime;
+	if (currFireTimer <= 0)
+	{
+		var phraseObj = fireNote(id,attackPhrase,NOTE_DIRECTION.DOWN);
+		phraseObj.patternInfo.maxAngle += offset;
+		phraseObj.patternInfo.minAngle += offset;
+		offset += 2;
+		currFireTimer = canFireTimer;
+	}
+}
 
 #endregion
-
