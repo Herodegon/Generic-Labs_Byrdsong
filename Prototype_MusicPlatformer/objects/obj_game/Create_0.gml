@@ -29,7 +29,7 @@ global.numEnemies = 0;
 global.enemiesKilled = 0;
 global.numEnemyMusicPoints = 0;     //How many music points worth of enemies there are. Handled in enemy create and destroy
 
-global.devCommandsActive = false;
+global.devCommandsActive = true;
 
 prevPauseState = global.gamePaused;
 timePaused = 0;
@@ -47,7 +47,6 @@ initCamera();
 #region Initialize scripts
 script_GUI();
 script_phrases();
-script_enemies();
 
 #endregion
 
@@ -57,6 +56,6 @@ initEnemySpawner();
 initPhraseStore();
 initSoundMachine();
 
-#endregion
+instance_create_layer(room_width/2,(room_height*2)/5,"Instances",obj_boss);
 
-show_debug_message("Width/Height: {0}x{1}",window_get_width(),window_get_height());
+#endregion

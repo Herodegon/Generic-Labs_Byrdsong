@@ -10,11 +10,18 @@ image_alpha = 1;
 
 #region Note variables
 #region Note stats
+moveSpeed = obj_player.moveSpeed + 1;
+moveSpeed_diag = obj_player.moveSpeed_diag + 1;
+moveVector_x = 0;
+moveVector_y = 0;
+moveDir = noone;			//When projectile direction is different than movement direction
+
 stats =
 {
 	max_hp: 1,
 	damage: 1,
-	knockback: 0
+	knockback: 0,
+	objSpeed: moveSpeed
 }
 hp = stats.max_hp;
 level = 1;
@@ -29,12 +36,6 @@ patternInfo =
 }
 
 #endregion
-
-moveSpeed = obj_player.moveSpeed + 1;
-moveSpeed_diag = obj_player.moveSpeed_diag + 1;
-moveVector_x = 0;
-moveVector_y = 0;
-moveDir = noone;			//When projectile direction is different than movement direction
 
 moveState = NOTE_MOVEMENT.STRAIGHT;
 collisionObject = obj_enemy;

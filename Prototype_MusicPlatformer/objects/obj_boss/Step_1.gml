@@ -1,18 +1,37 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (distance_to_object(obj_player) > 150 && !isPaused) {
-	var ex, ey
-	ex = instance_nearest(x, y, obj_player).x;
-	ey = instance_nearest(x, y, obj_player).y;
-	with (instance_create_layer(x,y,"Instances", obj_fire)) {
-		direction = point_direction(x, y, ex, ey);
+
+// Inherit the parent event
+event_inherited();
+
+#region Check For Boss Fight
+if (instance_exists(obj_player))
+{
+	with (obj_player)
+	{
+		//If player is close enough, start boss fight
+		if (point_distance(x,y,other.x,other.y) <= other.detectRange)
+		{
+			if (obj_enemySpawner.enemySpawnerState != SPAWN_STATE.BOSSFIGHT)
+			{
+				obj_enemySpawner.enemySpawnerState = SPAWN_STATE.BOSSFIGHT;
+				obj_enemySpawner.setChaseTarget(other.id);
+				other.currState = ENEMY_STATES.FIRE;
+			}
+		}
+		//If player has left boss fight range, end boss fight and begin patrol
+		else if (obj_enemySpawner.enemySpawnerState != SPAWN_STATE.NORMAL)
+		{
+			obj_enemySpawner.enemySpawnerState = SPAWN_STATE.NORMAL;
+			obj_enemySpawner.setChaseTarget(obj_player);
+			other.currState = ENEMY_STATES.PATROL;
+		}
 	}
-	for(i=0; i > 5; i++) {
-	}
-	with (instance_create_layer(x,y,"Instances", obj_fire)) {
-		ex = 60 + ex;
-		ey = 60 + ey;
-		direction = point_direction(x, y, ex, ey);
-	}
-	
 }
+
+#endregion
+
+#region Boss Fight
+
+#endregion
+

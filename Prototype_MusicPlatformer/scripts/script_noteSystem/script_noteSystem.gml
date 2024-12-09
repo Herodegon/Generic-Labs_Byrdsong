@@ -186,18 +186,20 @@ function fireNote(struct,dir)
 	}
 };
 
-function spawnPhraseNote(obj,moveState,angle,radius,stats)
+function spawnPhraseNote(obj,objCollision,moveState,angle,radius,stats)
 {
 	var pos_x = obj.x + (radius*dcos(angle));
 	var pos_y = obj.y + (radius*dsin(angle));
 	var objNote = instance_create_layer(pos_x,pos_y,"Instances",obj_phraseNote);
 	objNote.moveState = moveState;
 	objNote.objTether = obj;
+	objNote.collisionObject = objCollision;
 	objNote.radius = radius;
 	objNote.angle = angle;
 	
 	objNote.stats = stats;
 	objNote.hp = stats.max_hp;
+	objNote.moveSpeed = stats.objSpeed;
 };
 
 function spawnProjPattern(obj,state,pattInfo,stats,isDirDependant=false)
@@ -227,6 +229,6 @@ function spawnProjPattern(obj,state,pattInfo,stats,isDirDependant=false)
 	if (isDirDependant) {objDir = 360-(obj.moveDir*-45);}		
 	for (var i = 0; i < numNotes; i++)
 	{
-		spawnPhraseNote(obj,state,objDir+minAngle+(i*angle),radius,stats);
+		spawnPhraseNote(obj,obj.collisionObject,state,objDir+minAngle+(i*angle),radius,stats);
 	}
 };

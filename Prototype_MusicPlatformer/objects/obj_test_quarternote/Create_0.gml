@@ -8,7 +8,8 @@ stats =
 {
 	max_hp: 1,
 	damage: 2,
-	knockback: 0
+	knockback: 0,
+	objSpeed: moveSpeed
 }
 
 patternInfo =

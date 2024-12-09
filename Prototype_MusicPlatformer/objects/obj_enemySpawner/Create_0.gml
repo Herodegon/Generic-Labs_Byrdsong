@@ -1,6 +1,15 @@
 /// @description Initialize spawner
 // You can write your code in this editor
 
+//Initialize enemy pool
+script_enemies()
+
+enum SPAWN_STATE
+{
+	NORMAL,
+	BOSSFIGHT
+}
+
 enum SPAWN_WALL
 {
 	LEFT,
@@ -16,6 +25,24 @@ enum ENEMY_STATES
 	CHASE,
 	FIRE,
 	CHARGE,
+}
+
+setChaseTarget = function(obj)
+{
+	if (instance_exists(obj_enemy))
+	{
+		with (obj_enemy)
+		{
+			if (!isBoss)
+			{
+				if (chaseTarget != obj)
+				{
+					chaseTarget = obj;
+				}
+			}
+		}
+	}
+	enemyChaseTarget = obj;
 }
 
 spawnEnemies = function(num,obj,spr)
@@ -55,11 +82,13 @@ spawnEnemies = function(num,obj,spr)
 					break;
 			}
 		}
-		instance_create_layer(obj_x,obj_y,"Instances",obj);	
+		var objEnemy = instance_create_layer(obj_x,obj_y,"Instances",obj);	
+		objEnemy.chaseTarget = enemyChaseTarget;
 	}
 }
 
 availableEnemies = [];
+enemyChaseTarget = obj_player;
 
 maxBudget = 8;
 waveTimer = 3*MILLISECONDS;		//Time in milliseconds
@@ -74,9 +103,10 @@ currEnemyTimer = 0;
 
 canSpawn = true;
 isPaused = false;
-enemyLimit = 3000;
+enemyLimit = 1000;
 
 #region Developer Options
+enemySpawnerState = SPAWN_STATE.NORMAL;
 spawnWallState = SPAWN_WALL.NONE;
 
 #endregion

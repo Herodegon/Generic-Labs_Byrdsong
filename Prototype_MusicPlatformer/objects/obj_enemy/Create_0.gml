@@ -17,8 +17,17 @@ moveVector_x = 0;
 moveVector_y = 0;
 
 currState = ENEMY_STATES.CHASE;
+chaseTarget = obj_player;
+
+/* TODO: Reduce pathfinding equations down to x per second
+calcMove_x = 0;
+calcMove_y = 0;
+pathfindingTimer = 0.05*MILLISECONDS;
+currPathTimer = pathfindingTimer;
+*/
 
 canMove = true;
+isBoss = false;
 
 isPaused = false;
 

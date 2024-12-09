@@ -17,6 +17,11 @@ if (global.devCommandsActive)
 	{
 		global.toggleGUI = !global.toggleGUI;
 	}
+	
+	if (keyboard_check_pressed(ord("B")))
+	{
+		obj_enemySpawner.enemySpawnerState = SPAWN_STATE.BOSSFIGHT;
+	}
 
 	if (keyboard_check_pressed(vk_subtract))
 	{

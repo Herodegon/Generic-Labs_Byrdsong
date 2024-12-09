@@ -49,10 +49,6 @@ if(targetSingingPoints > 1) {
 
 #endregion
 
-
-show_debug_message("Target Attack Music Points: {0}", targetSingingPoints);
-show_debug_message("Current Attack Music Points: {0}", currentSingingPoints);
-
 #endregion
 
 #region Handling enemy music
@@ -128,9 +124,5 @@ if(currentEnemyPoints > 0) {
 }
 
 #endregion
-
-// show_debug_message("Total Enemy Music Points: {0}", global.numEnemyMusicPoints);
-// show_debug_message("Target Enemy Music Points: {0}", targetEnemyPoints);
-// show_debug_message("Current Enemy Music Points: {0}", currentEnemyPoints);
 
 #endregion

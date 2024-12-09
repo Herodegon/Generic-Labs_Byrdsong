@@ -42,8 +42,8 @@ if (!isPaused)
 	currEnemyTimer -= global.deltaTime;
 	if (currEnemyTimer <= 0)
 	{
-		array_push(availableEnemies,obj_game.poolEnemies[0])
-		array_delete(obj_game.poolEnemies,0,1);
+		array_push(availableEnemies,poolEnemies[0])
+		array_delete(poolEnemies,0,1);
 		currEnemyTimer = addEnemyTimer;
 	}
 	
@@ -51,4 +51,3 @@ if (!isPaused)
 }
 
 #endregion
-	

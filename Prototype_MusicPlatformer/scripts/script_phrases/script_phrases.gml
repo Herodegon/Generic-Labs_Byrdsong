@@ -49,8 +49,8 @@ poolPhrases =
 			name: "Quarter Note",
 			desc: "A mass of notes fired in a single direction.",
 			noteType: NOTE_TYPE.SINGLENOTE,
-			maxLevel: 10,
-			currLevel: 2,
+			maxLevel: 8,
+			currLevel: 1,
 			object: obj_test_quarternote,
 			sprite: noone,
 			musicPointValue: 1,
@@ -64,7 +64,7 @@ poolPhrases =
 		name: "Bass",
 		desc: "A piercing shotgun-like spread of notes.",
 		noteType: NOTE_TYPE.WAVENOTE,
-		maxLevel: 10,
+		maxLevel: 8,
 		currLevel: 1,
 		object: obj_test_wave,
 		sprite: noone,
@@ -79,7 +79,7 @@ poolPhrases =
 		name: "Opera",
 		desc: "An AOE shield of notes surrounds Byrd. They have a lot of health, but be careful: they don't last long!",
 		noteType: NOTE_TYPE.ECHONOTE,
-		maxLevel: 10,
+		maxLevel: 8,
 		currLevel: 1,
 		object: obj_test_opera,
 		sprite: noone,
@@ -90,5 +90,22 @@ poolPhrases =
 					  NOTE_DIRECTION.RIGHT]
 	}
 ];
+
+bossPhrases = 
+[
+	{
+		name: "Screech",
+		desc: "A horrid pitch releases a small amount of notes that shoot from Byrd in fear.",
+		noteType: NOTE_TYPE.SINGLENOTE,
+		maxLevel: 5,
+		currLevel: 1,
+		object: obj_test_quarternote,
+		sprite: noone,
+		musicPointValue: 20,
+		combination: [NOTE_DIRECTION.DOWN,
+						NOTE_DIRECTION.DOWNRIGHT,
+						NOTE_DIRECTION.RIGHT]
+	}
+]
 
 #endregion

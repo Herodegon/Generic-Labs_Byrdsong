@@ -8,7 +8,8 @@ stats =
 {
 	max_hp: 100,
 	damage: 1,
-	knockback: 1
+	knockback: 1,
+	objSpeed: (moveSpeed*3)/4
 }
 
 patternInfo =
@@ -18,8 +19,6 @@ patternInfo =
 	minAngle: -30,
 	radius: 4
 }
-
-moveSpeed /= 2;
 
 projState = NOTE_MOVEMENT.EXTEND;
 

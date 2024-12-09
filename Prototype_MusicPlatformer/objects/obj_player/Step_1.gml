@@ -31,8 +31,6 @@ if (canMove && !isPaused)
 	// Once calculations and collisions have been handled,
 	// move map by (back_x-move_x,back_y-move_y)
 	moveMap(round(move_x),round(move_y));
-	//x += move_x;
-	//y += move_y; 
 	#endregion
 }
 else	// Reset Background Movement
@@ -147,6 +145,7 @@ if (noteDir != NOTE_DIRECTION.NONE && canAttack && !isPaused)
 			currPhrase = getPhrase(availablePhrases,inputQueue);
 			if (currPhrase)
 			{
+				image_blend = c_grey;
 				canAttack = false;	// Player must stop inputting attacks before they choose a direction
 			}
 		}
@@ -157,6 +156,7 @@ if (noteDir != NOTE_DIRECTION.NONE && canAttack && !isPaused)
 			{
 				//show_debug_message("Select currPhrase / Dir: {0}", noteDir);
 				noteStruct = currPhrase;
+				image_blend = -1;
 				inputQueue = [];
 				inputQueue_size = 0;
 				currPhrase = noone;
@@ -230,13 +230,11 @@ if (!isPaused && !isDead)
 
 #region Adaptive Music
 if(instance_exists(obj_soundMachine)) {
-	
 	#region Nearby Enemy Calculations
 	var nearbyEnemyMusicPoints = 0;
 	var totalEnemes = global.numEnemies;
-	// if(point_distance(obj_player.x, obj_player.y, obj_enemy.x, obj_enemy.y) < 150) {
 	for(var i = 0; i < totalEnemes; i++) {
-		var currentEnemy = instance_find(obj_enemy, i);
+		var currentEnemy = instance_find(obj_enemy,i);
 		if(distance_to_object(currentEnemy) < 150) {
 			nearbyEnemyMusicPoints += currentEnemy.musicPointValue;
 		}
@@ -255,21 +253,6 @@ if(instance_exists(obj_soundMachine)) {
 		obj_soundMachine.walkingLoudness = max(obj_soundMachine.walkingLoudness, 0);// Cap walking loudness at 0
 	}
 	
-	#endregion
-	
-	#region Music attack calculations
-	// Currently unneeded now
-	/*
-	if(keyboard_check(Controls.note_right) or keyboard_check(Controls.note_left) or keyboard_check(Controls.note_up) or keyboard_check(Controls.note_down)) {
-		// Add a number to singingLoudness such that it takes 3 seconds to get to full volume
-		obj_soundMachine.targetSingingPoints += (1 / fps) / 3; 
-		obj_soundMachine.targetSingingPoints = min(obj_soundMachine.targetSingingPoints , 1); // Cap singing loudness at 1
-	}else {
-		// Subtract a number to singingLoudness such that it take 1 second to get to min volume
-		obj_soundMachine.targetSingingPoints  -= (1 / fps) / 5;
-		obj_soundMachine.targetSingingPoints  = max(obj_soundMachine.targetSingingPoints , 0);// Cap singing loudness at 0
-	}
-	*/
 	#endregion
 }
 

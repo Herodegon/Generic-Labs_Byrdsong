@@ -7,7 +7,11 @@ if (canLevelUp)
 	patternInfo.numNotes += (level-1);
 	if (level%3 == 0)
 	{
-		moveSpeed += 0.5;
+		stats.objSpeed += 0.5;
+	}
+	if (level%6 == 0)
+	{
+		stats.objSpeed += 0.5;
 	}
 	canLevelUp = false;
 }

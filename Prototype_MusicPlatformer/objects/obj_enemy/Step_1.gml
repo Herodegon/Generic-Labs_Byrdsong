@@ -2,18 +2,18 @@
 // You can write your code in this editor
 
 #region Chase player
-if (instance_exists(obj_player) && canMove && !isPaused)
+if (instance_exists(chaseTarget) && canMove && !isPaused)
 {
 	if (currState == ENEMY_STATES.CHASE)
 	{	
 		#region Movement and collision
 		var objSpeed = moveSpeed;
-		if (currState == ENEMY_STATES.CHASE && instance_exists(obj_player))
+		if (currState == ENEMY_STATES.CHASE)
 		{
-			var delta_x = obj_player.x - x;
-			var delta_y = obj_player.y - y;
+			var delta_x = chaseTarget.x - x;
+			var delta_y = chaseTarget.y - y;
 		}
-	
+		
 		if (abs(delta_x) > 3 && abs(delta_y) > 3)
 		{
 			objSpeed = moveSpeed_diag;
@@ -30,32 +30,33 @@ if (instance_exists(obj_player) && canMove && !isPaused)
 			moveVector_x = 0;
 			moveVector_y = sign(delta_y)*1;
 		}
+		
 		var move_x = objSpeed*moveVector_x;
 		var move_y = objSpeed*moveVector_y;
+		
+		if (obj_enemySpawner.enemySpawnerState == SPAWN_STATE.BOSSFIGHT &&
+			chaseTarget != obj_player)
+		{
+			var border = irandom_range(chaseTarget.detectRange,chaseTarget.detectRange+100);
+			if (point_distance(chaseTarget.x,chaseTarget.y,x,y) < border)
+			{
+				move_x *= -1;
+				move_y *= -1;
+			}
+		}
+			
 	
 		#endregion
-	
+		
 		#region Collision
 		if (currState == ENEMY_STATES.CHASE)
 		{
-			if (instance_place(x+move_x,y+move_y,obj_block) || instance_place(x+move_x,y+move_y,obj_enemy))
+			if (instance_place(x+move_x,y+move_y,obj_enemy))
 			{	
-				var obj = noone;
-				if (instance_place(x+move_x,y+move_y,obj_enemy))
-				{
-					obj = instance_place(x+move_x,y+move_y,obj_enemy);
-				}
-				else
-				{
-					obj = instance_place(x+move_x,y+move_y,obj_block);
-				}
-			
-				if (obj)
-				{
-					var vector = point_direction(x+move_x,y+move_y,obj.x,obj.y);
-					x -= dcos(vector);
-					y += dsin(vector);
-				}
+				var obj = instance_place(x+move_x,y+move_y,obj_enemy);
+				var vector = point_direction(x,y,obj.x,obj.y);
+				x -= dcos(vector);
+				y += dsin(vector);
 			}
 		}
 		x += move_x;
@@ -72,5 +73,22 @@ if (hp <= 0)
 {
 	instance_destroy();
 }
+
+#endregion
+
+#region Timers
+/* TODO: Reduce pathfinding equations down to x per second
+if (!isPaused)
+{
+	if (currPathTimer > 0)
+	{
+		currPathTimer -= global.deltaTime;
+		if (currPathTimer <= 0)
+		{
+			canCalculateMovement = true;
+		}
+	}
+}
+*/
 
 #endregion
