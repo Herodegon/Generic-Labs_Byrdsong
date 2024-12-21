@@ -11,7 +11,6 @@ image_alpha = 1;
 #region Note variables
 #region Note stats
 moveSpeed = 3;
-moveSpeed_diag = 2;
 moveVector_x = 0;
 moveVector_y = 0;
 moveDir = noone;			//When projectile direction is different than movement direction
@@ -29,10 +28,10 @@ canLevelUp = false;
 
 patternInfo =
 {
-	numNotes: 4,
-	maxAngle: 360,
+	numNotes: 0,
+	maxAngle: 0,
 	minAngle: 0,
-	radius: 8
+	radius: 0
 }
 
 #endregion

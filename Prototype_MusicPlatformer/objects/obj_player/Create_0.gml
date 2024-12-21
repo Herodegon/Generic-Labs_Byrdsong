@@ -44,15 +44,15 @@ image_speed = 0;
 #region Player Variables
 
 #region Stat/Movement Variables
-max_hp = 100;			//HP set on game start
+max_hp = 100;		//HP set on game start
 hp = max_hp;
-max_xp = 8;			//XP needed to level up
+max_xp = 14;		//XP needed to level up
+maxXpAmount = 7;	//Amount more xp needed each level up
 xp = 0;
-level = 0;				//Number of levels gained
+level = 1;			//Overall levels gained (starting at 1)
 itemPullRange = sprite_get_width(sprite_index)*2;
 
 moveSpeed = 2;
-moveSpeed_diag = moveSpeed-1;
 moveVector_x = 0;
 moveVector_y = 0;
 

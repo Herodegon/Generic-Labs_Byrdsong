@@ -16,7 +16,6 @@ if (instance_exists(chaseTarget) && canMove && !isPaused)
 		
 		if (abs(delta_x) > 3 && abs(delta_y) > 3)
 		{
-			objSpeed = moveSpeed_diag;
 			moveVector_x = sign(delta_x)*1;
 			moveVector_y = sign(delta_y)*1;
 		}
@@ -31,8 +30,16 @@ if (instance_exists(chaseTarget) && canMove && !isPaused)
 			moveVector_y = sign(delta_y)*1;
 		}
 		
-		var move_x = objSpeed*moveVector_x;
-		var move_y = objSpeed*moveVector_y;
+		var dir_x = moveVector_x;
+		var dir_y = moveVector_y;
+		if (moveVector_x != 0 && moveVector_y != 0)
+		{
+			dir_x /= UNIT_LENGTH;
+			dir_y /= UNIT_LENGTH;
+		}
+		
+		var move_x = objSpeed*dir_x;
+		var move_y = objSpeed*dir_y;
 		
 		if (obj_enemySpawner.enemySpawnerState == SPAWN_STATE.BOSSFIGHT &&
 			chaseTarget != obj_player)

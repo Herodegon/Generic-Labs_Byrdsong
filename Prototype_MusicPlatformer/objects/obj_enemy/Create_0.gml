@@ -12,7 +12,6 @@ damage = 1;		//Damage enemy deals
 objDrop = obj_xp;
 
 moveSpeed = 1;
-moveSpeed_diag = 0.5;
 moveVector_x = 0;
 moveVector_y = 0;
 

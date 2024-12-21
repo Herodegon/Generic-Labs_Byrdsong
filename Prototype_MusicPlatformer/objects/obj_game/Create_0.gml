@@ -6,6 +6,8 @@
 #macro MILLISECONDS 1000		//1 second = 1000 milliseconds
 #macro MICROSECONDS 1000000		//1 second = 1000000 microseconds
 
+#macro UNIT_LENGTH sqrt(2)	
+
 #macro DEPTH_GUI_OBJECTS -11
 #macro DEPTH_GUI -10
 #macro DEPTH_PLAYER 0
@@ -16,7 +18,7 @@
 #region Initialize main game variables
 //These are variables used or tracked by the game's larger systems
 global.windowScale = 10;
-global.isFullscreen = true;
+global.isFullscreen = false;
 global.gameTimer_start = -1;
 global.gameTimer = 0;				//Time passed since player spawned
 global.deltaTime = 0;				//Amount of time passed between frames

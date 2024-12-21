@@ -19,12 +19,15 @@ if (canSpawn)
 if (canMove && moveState == NOTE_MOVEMENT.STRAIGHT && !isPaused)
 {
 	var objSpeed = moveSpeed;
+	var dir_x = moveVector_x;
+	var dir_y = moveVector_y;
 	if (moveVector_x != 0 && moveVector_y != 0) 
 	{
-		objSpeed = moveSpeed_diag;
+		dir_x /= UNIT_LENGTH;
+		dir_y /= UNIT_LENGTH;
 	}
-	var deltaX = objSpeed*moveVector_x;
-	var deltaY = objSpeed*moveVector_y;
+	var deltaX = objSpeed*dir_x;
+	var deltaY = objSpeed*dir_y;
 		
 	x += deltaX;
 	y += deltaY;

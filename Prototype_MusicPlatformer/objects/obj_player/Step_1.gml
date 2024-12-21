@@ -9,15 +9,18 @@ if (canMove && !isPaused)
 	moveVector_x = (keyboard_check(Controls.move_right)-keyboard_check(Controls.move_left));
 	moveVector_y = (keyboard_check(Controls.move_down)-keyboard_check(Controls.move_up));
 	var objSpeed = moveSpeed;
+	var dir_x = moveVector_x;
+	var dir_y = moveVector_y;
 
 	// Handle diagonal movement
 	if (moveVector_x != 0 && moveVector_y != 0)
 	{
-		objSpeed = moveSpeed_diag;
+		dir_x /= UNIT_LENGTH;
+		dir_y /= UNIT_LENGTH;
 	}
 
-	var move_x = objSpeed*moveVector_x;
-	var move_y = objSpeed*moveVector_y;
+	var move_x = objSpeed*dir_x;
+	var move_y = objSpeed*dir_y;
 
 	#endregion
 
@@ -64,7 +67,7 @@ if (!isPaused && !isInvincible)
 			if (other.hp > 0)
 			{
 				other.hp -= damage;
-				tookDamage = true;
+				other.tookDamage = true;
 			}
 		}
 	}
@@ -74,8 +77,8 @@ if (tookDamage)
 {
 	image_blend = c_red;
 	isInvincible = true;
-	invulnerableTimer = other.invulnerablePeriod;
-	hitTimer = other.invulnerablePeriod*1.1;	
+	invulnerableTimer = invulnerablePeriod;
+	hitTimer = invulnerablePeriod*1.1;	
 	tookDamage = false;
 }
 
@@ -104,7 +107,8 @@ if (xp >= max_xp && !isPaused)
 {
 	hp = max_hp;
 	xp = xp % max_xp;
-	max_xp *= 2;
+	max_xp += maxXpAmount;
+	level++;
 	canLevelUp = true;
 }
 

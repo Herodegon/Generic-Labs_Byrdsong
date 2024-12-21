@@ -84,30 +84,34 @@ spawnEnemies = function(num,obj,spr)
 		}
 		var objEnemy = instance_create_layer(obj_x,obj_y,"Instances",obj);	
 		objEnemy.chaseTarget = enemyChaseTarget;
+		objEnemy.hp += (obj_player.level-1)*2;
+		objEnemy.damage += floor(obj_player.level/5);
 	}
 }
 
 availableEnemies = [];
 enemyChaseTarget = obj_player;
 
-maxBudget = 8;
-waveTimer = 3*MILLISECONDS;		//Time in milliseconds
+#region Spawner Settings
+maxBudget = 3;
+waveTimer = 2*MILLISECONDS;		//Time in milliseconds
 currTimer = waveTimer;
 
-maxBudgetTimer = 20*MILLISECONDS;
+maxBudgetTimer = 30*MILLISECONDS;
 currBudgetTimer = maxBudgetTimer;
-budgetIncreaseMult = 1.1;
+budgetIncreaseAmount = 1;
 
-addEnemyTimer = 60*MILLISECONDS;
+addEnemyTimer = 90*MILLISECONDS;
 currEnemyTimer = 0;
 
-addBossTimer = 3*60*MILLISECONDS;
+addBossTimer = 5*60*MILLISECONDS;
 currBossTimer = addBossTimer;
-
 
 canSpawn = true;
 isPaused = false;
 enemyLimit = 1000;
+
+#endregion
 
 #region Developer Options
 enemySpawnerState = SPAWN_STATE.NORMAL;

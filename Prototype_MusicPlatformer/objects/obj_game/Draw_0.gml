@@ -39,7 +39,29 @@ if (instance_exists(obj_player) && global.toggleGUI)
 			var comboY = y-(spriteWidth/2)-spriteWidth_input;
 			drawInputCombo(comboX,comboY,inputQueue,false);
 		}
+		
+		/*
+		draw_set_color(c_black);
+		var radius = 100;
+		draw_circle(x,y,radius,true);
+		draw_arrow(x,y,x+(radius*debug_moveX),y+(radius*debug_moveY),10);
+		draw_set_color(c_blue);
+		draw_arrow(x,y,x+(radius*moveVector_x),y+(radius*moveVector_y),10);
+		*/
 	}
+	
+	/*
+	if (instance_exists(obj_enemy))
+	{
+		with (obj_enemy)
+		{
+			draw_set_color(c_black);
+			var radius = 50;
+			draw_circle(x,y,radius,true);
+			draw_arrow(x,y,x+(radius*debug_moveX),y+(radius*debug_moveY),10);
+		}
+	}
+	*/
 }
 
 #endregion

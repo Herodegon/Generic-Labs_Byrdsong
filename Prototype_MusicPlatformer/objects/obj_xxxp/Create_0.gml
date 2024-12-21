@@ -4,5 +4,5 @@
 // Inherit the parent event
 event_inherited();
 
-xpGain = 9;
+xpGain = 12;
 

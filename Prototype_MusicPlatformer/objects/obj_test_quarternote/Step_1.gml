@@ -6,6 +6,7 @@ if (canLevelUp)
 {
 	patternInfo.numNotes += (level-1)*2;
 	patternInfo.radius += (level-1)*2;
+	stats.damage += (level/6)*1;
 	canLevelUp = false;
 }
 

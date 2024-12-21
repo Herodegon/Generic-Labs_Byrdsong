@@ -32,7 +32,7 @@ if (!isPaused)
 	currBudgetTimer -= global.deltaTime;
 	if (currBudgetTimer <= 0)
 	{
-		maxBudget = round(maxBudget*budgetIncreaseMult);
+		maxBudget += budgetIncreaseAmount;
 		currBudgetTimer = maxBudgetTimer;
 	}
 	

@@ -8,6 +8,7 @@ if (canLevelUp)
 	patternInfo.maxAngle += (level-1)*5;
 	patternInfo.minAngle -= (level-1)*5;
 	patternInfo.radius += (level-1)*2;
+	stats.damage += floor(level/4)*1;
 	canLevelUp = false;
 }
 
