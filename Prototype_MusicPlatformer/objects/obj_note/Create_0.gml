@@ -31,8 +31,11 @@ patternInfo =
 	numNotes: 0,
 	maxAngle: 0,
 	minAngle: 0,
-	radius: 0
+	radius: 0,
 }
+
+additionalPatterns = [];
+additionalStats = [];
 
 #endregion
 

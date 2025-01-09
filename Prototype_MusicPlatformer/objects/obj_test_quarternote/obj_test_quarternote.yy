@@ -33,10 +33,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_quarternote",
-    "path":"sprites/spr_quarternote/spr_quarternote.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":false,
 }

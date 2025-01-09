@@ -9,7 +9,7 @@ stats =
 	max_hp: 100,
 	damage: 1,
 	knockback: 1,
-	objSpeed: moveSpeed*(3/4)
+	objSpeed: moveSpeed
 }
 
 patternInfo =

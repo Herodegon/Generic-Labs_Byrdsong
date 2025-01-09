@@ -6,7 +6,7 @@ event_inherited();
 
 stats = 
 {
-	max_hp: 1,
+	max_hp: 2,
 	damage: 2,
 	knockback: 0,
 	objSpeed: moveSpeed
@@ -17,7 +17,7 @@ patternInfo =
 	numNotes: 4,
 	maxAngle: 360,
 	minAngle: 0,
-	radius: 8
+	radius: 8,
 }
 
 projState = NOTE_MOVEMENT.CIRCULAR;

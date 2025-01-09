@@ -10,6 +10,13 @@ if (isPaused && isGuiObject) {isPaused = false;}
 if (canSpawn)
 {
 	spawnProjPattern(id,projState,patternInfo,stats,true);
+	if (array_length(additionalPatterns) > 0)
+	{
+		for (var i = 0; i < array_length(additionalPatterns); i++)
+		{
+			spawnProjPattern(id,projState,additionalPatterns[i],additionalStats[i],true);
+		}
+	}
 	canSpawn = false;
 }
 
@@ -50,10 +57,7 @@ if (!isInvincible && !isPaused)
 			}
 			hp -= other.stats.damage;
 			other.hp--;
-			if (other.collisionObject == obj_player)
-			{
-				tookDamage = true;	
-			}
+			tookDamage = true;
 		}
 	}
 }

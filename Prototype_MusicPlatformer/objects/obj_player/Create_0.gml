@@ -46,11 +46,11 @@ image_speed = 0;
 #region Stat/Movement Variables
 max_hp = 100;		//HP set on game start
 hp = max_hp;
-max_xp = 14;		//XP needed to level up
-maxXpAmount = 7;	//Amount more xp needed each level up
+max_xp = 6;			//XP needed to level up
+maxXpAmount = 8;	//Amount more xp needed each level up
 xp = 0;
 level = 1;			//Overall levels gained (starting at 1)
-itemPullRange = sprite_get_width(sprite_index)*2;
+itemPullRange = 8;
 
 moveSpeed = 2;
 moveVector_x = 0;
@@ -64,8 +64,8 @@ inputWindow = 0.4*MILLISECONDS
 invulnerablePeriod = 0.1*MILLISECONDS
 attackTimer = 0;
 inputTimer = 0;
-invulnerableTimer = 0;
-hitTimer = 0;
+invulnerableTimer = 0;		//Timer for invulnerability after hit
+hitTimer = 0;				//Timer for hit effect on player
 
 #endregion
 

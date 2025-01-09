@@ -75,6 +75,15 @@ if (instance_exists(chaseTarget) && canMove && !isPaused)
 
 #endregion
 
+if (tookDamage)
+{
+	image_blend = c_purple;
+	isInvincible = true;
+	invulnerableTimer = invulnerablePeriod;
+	hitTimer = invulnerablePeriod*1.1;
+	tookDamage = false;
+}
+
 #region Health Check
 if (hp <= 0)
 {
@@ -84,9 +93,9 @@ if (hp <= 0)
 #endregion
 
 #region Timers
-/* TODO: Reduce pathfinding equations down to x per second
 if (!isPaused)
 {
+	/* TODO: Reduce pathfinding equations down to x per second
 	if (currPathTimer > 0)
 	{
 		currPathTimer -= global.deltaTime;
@@ -95,7 +104,25 @@ if (!isPaused)
 			canCalculateMovement = true;
 		}
 	}
+	*/
+	
+	if (invulnerableTimer > 0)
+	{
+		invulnerableTimer -= global.deltaTime;
+		if (invulnerableTimer <= 0)
+		{
+			isInvincible = false;
+		}
+	}
+	
+	if (hitTimer > 0)
+	{
+		hitTimer -= global.deltaTime;
+		if (hitTimer <= 0)
+		{
+			image_blend = -1;
+		}
+	}
 }
-*/
 
 #endregion
