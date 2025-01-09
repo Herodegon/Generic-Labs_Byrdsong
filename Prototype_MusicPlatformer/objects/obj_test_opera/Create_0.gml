@@ -20,6 +20,7 @@ patternInfo =
 	radius: 24
 }
 
+/*
 additionalPatterns =
 [
 	{
@@ -29,6 +30,7 @@ additionalPatterns =
 		radius: 36
 	}
 ]
+*/
 
 additionalStats =
 [
