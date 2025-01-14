@@ -34,6 +34,10 @@ global.numEnemyMusicPoints = 0;     //How many music points worth of enemies the
 
 global.devCommandsActive = true;
 
+maxPathfindingTimer = 0.20*MILLISECONDS;
+currPathfindingTimer = maxPathfindingTimer;
+global.canCalcPath = false;
+
 prevPauseState = global.gamePaused;
 timePaused = 0;
 totalTimePaused = 0;
@@ -56,6 +60,6 @@ script_phrases();
 spawnPlayer();
 initEnemySpawner();
 initPhraseStore();
-initSoundMachine();
+//initSoundMachine();
 
 #endregion

@@ -1,8 +1,6 @@
 /// @description Run main game tasks
 // You can write your code in this editor
 
-show_debug_message("Num Enemies: {0}",global.numEnemies);
-
 #region Update Timer
 if (instance_exists(obj_player))
 {
@@ -94,5 +92,19 @@ prevPauseState = global.gamePaused;
 
 #region Reset dev flags
 global.forceSpawn = false;
+
+#endregion
+
+#region Timers
+currPathfindingTimer -= global.deltaTime;
+if (currPathfindingTimer <= 0)
+{
+	global.canCalcPath = true;
+	currPathfindingTimer = maxPathfindingTimer;
+}
+else if (global.canCalcPath == true)
+{
+	global.canCalcPath = false;
+}
 
 #endregion

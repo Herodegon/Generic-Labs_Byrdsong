@@ -183,9 +183,11 @@ function fireNote(obj,struct,dir)
 	noteObj.level = struct.currLevel;
 	if (noteObj.level > 1) {noteObj.canLevelUp = true;}
 	
+	/*
 	if(object_exists(obj_soundMachine) && obj.object_index == obj_player) {
 		obj_soundMachine.targetSingingPoints += struct.musicPointValue;
 	}
+	*/
 	
 	return noteObj;
 };

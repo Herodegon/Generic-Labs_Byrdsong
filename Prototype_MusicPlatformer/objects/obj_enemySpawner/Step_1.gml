@@ -54,7 +54,10 @@ if (!isPaused)
 	if (currBossTimer <= 0)
 	{
 		var boss = poolBosses[0];
-		spawnEnemies(1,boss.object,boss.sprite)
+		if (!instance_exists(obj_boss))
+		{
+			spawnEnemies(1,boss.object,boss.sprite);
+		}
 		currBossTimer = addBossTimer;
 	}
 	

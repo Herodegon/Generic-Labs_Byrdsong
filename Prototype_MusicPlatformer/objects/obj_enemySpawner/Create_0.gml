@@ -104,7 +104,7 @@ budgetIncreaseAmount = 1;
 addEnemyTimer = 90*MILLISECONDS;
 currEnemyTimer = 0;
 
-addBossTimer = 5*60*MILLISECONDS;
+addBossTimer = 10*MILLISECONDS;
 currBossTimer = addBossTimer;
 
 canSpawn = true;

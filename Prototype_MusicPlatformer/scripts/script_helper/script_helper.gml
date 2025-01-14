@@ -43,6 +43,8 @@ function moveMap(objMove_x,objMove_y)
 	layer_hspeed(layer_background,-objMove_x);
 	layer_vspeed(layer_background,-objMove_y);
 	
+	#region Non-Player Movement
+	// Move all non-player objects opposite of player movement
 	if (instance_exists(obj_note))
 	{
 		with (obj_note)
@@ -72,4 +74,6 @@ function moveMap(objMove_x,objMove_y)
 			y -= objMove_y;
 		}
 	}
+	
+	#endregion
 };

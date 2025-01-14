@@ -66,6 +66,17 @@ if (instance_exists(obj_player) && global.toggleGUI)
 
 #endregion
 
+#region Arrow to Boss
+if (instance_exists(obj_boss))
+{
+	with (obj_boss)
+	{
+			
+	}
+}
+
+#endregion
+
 #region Pause Screen
 if (global.gamePaused && global.displayPaused)
 {	

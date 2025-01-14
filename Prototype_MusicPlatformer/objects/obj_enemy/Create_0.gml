@@ -15,6 +15,9 @@ moveSpeed = 1;
 moveVector_x = 0;
 moveVector_y = 0;
 
+move_x = 0;
+move_y = 0;
+
 currState = ENEMY_STATES.CHASE;
 chaseTarget = obj_player;
 
@@ -22,13 +25,6 @@ chaseTarget = obj_player;
 invulnerablePeriod = 0.05*MILLISECONDS
 invulnerableTimer = 0;
 hitTimer = 0;
-
-/* TODO: Reduce pathfinding equations down to x per second
-calcMove_x = 0;
-calcMove_y = 0;
-pathfindingTimer = 0.05*MILLISECONDS;
-currPathTimer = pathfindingTimer;
-*/
 
 #endregion
 
